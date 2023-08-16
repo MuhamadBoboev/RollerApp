@@ -1,0 +1,28 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+@import "src/styles/media";
+
+.text_align__start {
+	text-align: start;
+}
+.text_align__center {
+	text-align: center;
+}
+.text_align__end {
+	text-align: end;
+}
+.text {
+	@include fontRoboto400Regular(16px, 150%);
+	color: $colorGreyLight;
+	width: 100%;
+}
+@include breakpoint-medium {
+	.text {
+		font-size: 14px;
+	}	
+}
+@include breakpoint-small {
+	.text {
+		font-size: 12px;
+	}
+}

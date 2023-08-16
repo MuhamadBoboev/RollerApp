@@ -1,0 +1,171 @@
+@import 'src/styles/mixins';
+@import 'src/styles/colors';
+@import 'src/styles/media';
+
+.block_info {
+	padding-top: 150px;
+}
+
+
+.block_info__wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: 40px;
+}
+
+.variant_second {
+	display: flex;
+
+	.block_info__bl_text {
+		flex: 1.25 1;
+	}
+
+	.block_info__left {
+		flex: 1 1.25;
+	}
+}
+
+.variant_first {
+	display: flex;
+
+	.block_info__bl_text {
+		flex: 1.25 1;
+		order: 1;
+	}
+
+	.block_info__left {
+		flex: 1 1.25;
+	}
+}
+
+.block_info__body {
+	display: flex;
+	flex-direction: column;
+	padding: 40px 0;
+	grid-gap: 24px
+}
+
+.text__block {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 24px;
+}
+
+.block_info__title {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 16px
+}
+
+.block_info__bl_img {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		object-fit: cover;
+	}
+}
+
+.last_text {
+	@include fontRoboto400Regular(16px, 150%);
+}
+
+.display_none {
+	display: none;
+}
+
+@include breakpoint-large {
+	.block_info__title {
+		grid-gap: 24px;
+	}
+
+	.block_info__body {
+		padding: 0;
+	}
+
+	.block_info__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.block_info__bl_text {
+		order: 0;
+		flex: none
+	}
+
+	.block_info__left {
+		height: 352px;
+		flex: none;
+		order: 1;
+	}
+
+	.block_info__bl_img {
+		position: relative;
+		width: 100%;
+		height: 500px;
+
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.text {
+		text-align: center;
+	}
+
+	.last_text {
+		text-align: center;
+	}
+
+	.text__block {
+		grid-gap: 16px;
+	}
+
+}
+
+@include breakpoint-medium {
+	.block_info {
+		padding-top: 80px;
+	}
+
+	.block_info__wrapper {
+		grid-gap: 16px;
+	}
+
+	.block_info__title {
+		grid-gap: 10px;
+	}
+
+	.block_info__body {
+		grid-gap: 16px;
+	}
+
+	.block_info__bl_img {
+		height: 200px;
+
+		img {
+			object-fit: cover;
+		}
+	}
+
+	.last_text {
+		text-align: center;
+		font-size: 14px;
+	}
+}
+
+@include breakpoint-small {
+	.block_info {
+		padding-top: 40px;
+	}
+}

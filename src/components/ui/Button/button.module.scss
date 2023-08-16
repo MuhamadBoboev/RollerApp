@@ -1,0 +1,88 @@
+// @import "src/styles/variables";
+// @import "src/styles/mixins";
+@import "src/styles/mixins";
+@import "src/styles/colors";
+@import "src/styles/media";
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: none;
+	text-decoration: none;
+	border-radius: 35px;
+	padding: 20px 80px;
+	@include fontRoboto500Medium(20px, 100%);
+	cursor: pointer;
+	// outline: 1px solid transparent;
+	background: transparent;
+	// transition-property: background, color, transform;
+	transition-duration: 150ms;
+	//width: fit-content;
+}
+
+.variant-red {
+	background: $colorRed;
+	color: $colorWhite;
+
+	&:hover {
+		background: darken($colorRed, 4%);
+	}
+
+	&:active {
+		background: darken($colorRed, 8%);
+	}
+
+	&:disabled {
+		opacity: .7;
+
+		&:hover {
+			background: $colorRed;
+		}
+	}
+}
+
+.variant-white {
+	outline-color: $colorWhite;
+	color: $colorRed;
+	transition-duration: 260ms;
+	background-color: $colorWhite;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&:active {
+		background: $colorRed;
+		color: $colorWhite;
+		transform: scale(0.98);
+	}
+}
+
+
+
+
+.variant-white-outlined {
+	outline-color: #fff;
+	color: #fff;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+@include breakpoint-small {
+	.button {
+		font-size: 12px;
+		padding: 12px 20px;
+	}
+}

@@ -1,0 +1,44 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+@import "src/styles/media";
+// @import "src/styles/colors";
+
+.text_align__start {
+	text-align: start;
+}
+
+.text_align__center {
+	text-align: center;
+}
+
+.text_align__end {
+	text-align: end;
+}
+
+.subtitle {
+	@include fontRoboto600Semi-Bold(30px, 100%);
+	width: 100%;
+	text-transform: uppercase;
+}
+
+.red_text {
+	color: $colorRed;
+	text-transform: uppercase;
+}
+
+.display {
+	display: none;
+}
+
+@include breakpoint-medium {
+	.subtitle {
+		font-size: 24px;
+		text-align: center;
+	}
+}
+
+@include breakpoint-small {
+	.subtitle {
+		font-size: 20px;
+	}
+}

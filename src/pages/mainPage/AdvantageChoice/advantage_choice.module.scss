@@ -1,0 +1,12 @@
+@import 'src/styles/media';
+.contianer {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 80px;
+	@include breakpoint-medium {
+		grid-gap: 64px;
+	}
+	@include breakpoint-small {
+		grid-gap: 40px;
+	}
+}

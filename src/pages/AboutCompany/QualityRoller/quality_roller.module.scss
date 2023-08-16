@@ -1,0 +1,46 @@
+// @import 'src/style/colors.scss';
+@import '../../../styles/colors';
+@import '../../../styles/media';
+@import '../../../styles/mixins';
+
+.wrapper {
+	// max-width: 865px;
+	// margin: 0 auto;
+	width: 100%;
+}
+
+.container {
+	padding-top: 100px;
+}
+
+.body {
+	width: 100%;
+	padding: 40px 113px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 25px;
+	border-radius: 20px;
+	background-color: $colorBlockLightGrey;
+	box-sizing: border-box;
+}
+
+@include breakpoint-medium {
+	.container {
+		padding-top: 80px;
+	}
+
+	.body {
+		padding: 24px 40px;
+		grid-gap: 16px;
+	}
+}
+
+@include breakpoint-small {
+	.body {
+		padding: 16px 16.5px;
+	}
+
+	.container {
+		padding-top: 40px;
+	}
+}

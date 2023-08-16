@@ -1,0 +1,163 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins';
+@import 'src/styles/media';
+
+.form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 40px;
+	padding-top: 150px;
+}
+
+.container {
+	width: -webkit-fill-available;
+}
+
+.title {
+	text-align: center;
+	@include fontRoboto600Semi-Bold(30px, 100%);
+	color: $colorBlackLight;
+	text-transform: uppercase;
+}
+
+.text {
+	text-align: center;
+	@include fontRoboto400Regular(24px, 150%);
+	color: $colorGreyLight
+}
+
+.form_top {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 24px;
+
+}
+
+.form__wrapper {
+	padding: 40px 74px;
+	background-color: $colorBlockLightGrey;
+	border-radius: 20px;
+}
+
+.form__body {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 24px
+}
+
+.form__items {
+	@include grid(1fr 1fr, repeat(3, 1fr));
+	grid-column-gap: 20px;
+	grid-row-gap: 16px;
+
+}
+
+.form__item {
+	width: 100%;
+	height: 100%;
+}
+
+.form__item:nth-child(3) {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 7;
+	text-align: left;
+	max-width: 100%;
+
+	textarea {
+		resize: none;
+	}
+}
+
+.form__input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background-color: $colorWhite;
+	padding: 16px 24px;
+	border-radius: 33.5px;
+	box-sizing: border-box;
+}
+
+.form__selected {
+	width: 100%;
+	height: 100%;
+	background-color: $colorWhite;
+	padding: 16px 24px;
+	border: none;
+	border-radius: 33.5px;
+}
+
+.form__bl_button {
+	display: flex;
+	justify-content: center;
+}
+
+@include breakpoint-medium {
+	.form__wrapper {
+		padding: 24px;
+	}
+
+	.form__items {
+		grid-column-gap: 20px;
+		grid-row-gap: 16px;
+	}
+
+	.form {
+		grid-gap: 24px;
+		padding-top: 80px;
+	}
+
+	.title {
+		font-size: 24px;
+	}
+
+	.text {
+		font-size: 20px;
+	}
+
+}
+
+@include breakpoint-small {
+	.form__wrapper {
+		padding: 16px;
+	}
+
+	.form__body {
+		grid-gap: 16px;
+	}
+
+	.form__items {
+		display: flex;
+		flex-direction: column;
+		grid-gap: 8px;
+	}
+
+	.form {
+		grid-gap: 16px;
+	}
+
+	.form_top {
+		grid-gap: 16px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.form__items {
+		grid-gap: 11px;
+	}
+
+	.form__body {
+		grid-gap: 9px;
+	}
+
+}

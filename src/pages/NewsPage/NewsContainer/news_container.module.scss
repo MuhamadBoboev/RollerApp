@@ -1,0 +1,12 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 40px;
+	padding-top: 30px;
+}
+
+.news__items {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 40px;
+}

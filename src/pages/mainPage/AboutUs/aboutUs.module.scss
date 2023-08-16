@@ -1,0 +1,11 @@
+@import 'src/styles/media';
+.about_s {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 80px;
+}
+@include breakpoint-small {
+	.about_s {
+		grid-gap: 40px;
+	}
+}

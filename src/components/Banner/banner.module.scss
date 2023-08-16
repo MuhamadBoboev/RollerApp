@@ -1,0 +1,113 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/mixins';
+
+.banner {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.swiper__lib {
+	:global(.swiper-button-prev) {
+		display: flex;
+		border-radius: 50%;
+		background-color: rgb(58%, 58%, 54%, 0.5);
+		width: 80px;
+		height: 80px;
+	}
+
+	:global(.swiper-button-next) {
+		display: flex;
+		border-radius: 50%;
+		background-color: rgb(58%, 58%, 54%, 0.5);
+		width: 80px;
+		height: 80px;
+	}
+
+
+	:global(.swiper-button-prev:after),
+	:global(.swiper-button-next:after) {
+		font-size: 23px;
+		color: $colorRed;
+	}
+}
+
+.vertical_Class {
+	display: flex;
+	justify-content: center;
+	bottom: 40px !important;
+}
+
+.bullet {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	background: $colorWhite;
+	display: block;
+	border-radius: 50%;
+	margin: 0 8px;
+}
+
+.bulletActive {
+	background: $colorRed;
+}
+
+@include breakpoint-medium {
+	.swiper__lib {
+		:global(.swiper-button-prev) {
+			width: 40px;
+			height: 40px;
+		}
+
+		:global(.swiper-button-next) {
+			width: 40px;
+			height: 40px;
+		}
+
+		:global(.swiper-button-prev:after),
+		:global(.swiper-button-next:after) {
+			font-size: 16px;
+		}
+	}
+
+	.vertical_Class {
+		bottom: 24px !important;
+	}
+
+	.bullet {
+		width: 16px;
+		height: 16px;
+		margin: 0 8px;
+	}
+
+}
+
+@include breakpoint-small {
+	.swiper__lib {
+		:global(.swiper-button-prev) {
+			width: 32px;
+			height: 32px;
+		}
+
+		:global(.swiper-button-next) {
+			width: 32px;
+			height: 32px;
+		}
+
+		:global(.swiper-button-prev:after),
+		:global(.swiper-button-next:after) {
+			font-size: 12.8px;
+		}
+	}
+
+	.vertical_Class {
+		bottom: 30 !important;
+	}
+
+	.bullet {
+		width: 16px;
+		height: 16px;
+		margin: 0 4px;
+	}
+
+}

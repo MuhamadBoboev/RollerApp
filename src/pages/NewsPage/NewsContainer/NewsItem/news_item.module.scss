@@ -1,0 +1,184 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media';
+@import '../../../../styles/mixins';
+
+.item {
+	background-color: $colorBlockLightGrey;
+	border-radius: 20px;
+	overflow: hidden;
+	display: flex;
+	grid-gap: 32px;
+}
+
+.img {
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.item__body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	grid-gap: 40px;
+	padding: 19px 0;
+	padding-right: 89px;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.item__top {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 16px
+}
+
+.item__bl_text {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 16px
+}
+
+.item__subtitle {
+	@include fontRoboto500Medium(14px, 100%);
+	color: $colorRed;
+}
+
+.item__title {
+	@include fontRoboto600Semi-Bold(20px, 100%)
+}
+
+.item_text {
+	@include fontRoboto400Regular(16px, 150%)
+}
+
+.item__bottom {
+	display: flex;
+	flex-wrap: nowrap;
+	grid-gap: 8px
+}
+
+.item__link {
+	@include fontRoboto500Medium(20px, 100%);
+	color: $colorRed;
+}
+
+.item_link_img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+@include breakpoint-medium {
+
+	.img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	.item__body {
+		grid-gap: 16px;
+		padding: 12px 0;
+		padding-right: 51px;
+	}
+
+	.item__top {
+		grid-gap: 16px
+	}
+
+	.item__bl_text {
+		grid-gap: 8px
+	}
+
+	.item__subtitle {
+		font-size: 12px;
+	}
+
+	.item__title {
+		font-size: 16px;
+	}
+
+	.item_text {}
+
+	.item__bottom {
+		grid-gap: 4px
+	}
+
+	.item__link {
+		font-size: 16px;
+	}
+
+	.item_link_img {
+		img {
+			width: 18px;
+		}
+	}
+}
+
+@include breakpoint-small {
+
+	.img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.item {
+		display: flex;
+		flex-direction: column;
+		grid-gap: 0;
+	}
+
+	.item__body {
+		grid-gap: 16px;
+		padding: 16px 25px;
+		text-align: center;
+	}
+
+	.item__top {
+		grid-gap: 8px
+	}
+
+	.item__bl_text {
+		grid-gap: 8px;
+
+		p {
+			text-align: center;
+		}
+	}
+
+	.item__subtitle {
+		font-size: 12px;
+	}
+
+	.item__title {
+		margin: 0 auto;
+		width: 100%;
+		font-size: 14px;
+		width: 180px;
+	}
+
+	.item__bottom {
+		grid-gap: 4px;
+		justify-content: center;
+	}
+
+	.item__link {
+		font-size: 12px;
+	}
+
+	.item_link_img {
+
+		img {
+			width: 20px;
+			height: 9px;
+		}
+	}
+}

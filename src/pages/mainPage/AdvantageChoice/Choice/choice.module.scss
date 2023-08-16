@@ -1,0 +1,55 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins';
+@import 'src/styles/media';
+
+.choice__body {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 24px;
+	padding: 40px;
+	background-color: $colorBlockLightBlue;
+	border-radius: 20px;
+}
+.choice__title {
+	text-align: center;
+	@include fontRoboto600Semi-Bold(24px, 120%);
+	color: $colorRed;
+}
+.choice__text_block {
+	display: flex;
+	justify-content: center
+}
+.choice__text {
+	max-width: 490px;
+	text-align: center;
+}
+.choice__bl_button {
+	display: flex;
+	justify-content: center;
+}
+@include breakpoint-medium {
+	.choice__body {
+		grid-gap: 20px;
+	}
+	.choice__title {
+		font-size: 20px;
+	}
+	.choice__text {
+		font-size: 14px;
+	}
+}
+@include breakpoint-small {
+	.choice__body {
+		grid-gap: 16px;
+		padding: 24px;
+	}
+	.choice__title {
+		font-size: 16px;
+	}
+	.choice__text {
+		font-size: 12px;
+	}
+	.choice__button {
+		padding: 12px 33px;
+	}
+}

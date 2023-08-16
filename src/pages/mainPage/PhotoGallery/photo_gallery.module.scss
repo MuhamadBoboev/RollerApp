@@ -1,0 +1,196 @@
+@import '../../../styles/colors';
+@import '../../../styles/media';
+@import '../../../styles/mixins';
+
+.container {
+	width: 100%;
+	padding-top: 150px;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 40px;
+}
+
+.title_block {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.link_block {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	grid-gap: 16px;
+}
+
+.link_block__mobile {
+	display: none;
+}
+
+.link_text {
+	min-width: max-content;
+	color: $colorRed;
+}
+
+.link_img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 24px;
+	}
+}
+
+.link_text {
+	@include fontRoboto500Medium(20px, 100%);
+
+}
+
+.items {
+	@include grid(1fr 1fr 1fr, 1fr 1fr);
+	grid-gap: 20px;
+}
+
+.item {
+	border-radius: 20px;
+	overflow: hidden;
+	height: 100%;
+	max-width: 100%;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+.item:nth-child(1) {
+
+	background-color: rgb(211, 207, 207);
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+
+}
+
+.item:nth-child(2) {
+	background-color: rgb(17, 233, 31);
+	grid-column-start: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.item:nth-child(3) {
+	background-color: red;
+	grid-column-start: 3;
+	grid-row-start: 2;
+}
+
+@include breakpoint-medium {
+	.title_block {
+		h2 {
+			text-align: start;
+		}
+	}
+
+	.link_block {
+		grid-gap: 8px;
+	}
+
+	.link_text {
+		font-size: 15px;
+	}
+
+	.link_img {
+		img {
+			width: 20px;
+		}
+	}
+
+	.items {
+		.item:nth-child(1) {
+			width: 100%;
+
+			img {
+				width: 100%;
+				height: 320px;
+			}
+		}
+
+		.item:nth-child(2) {
+			img {
+				width: 100%;
+				height: 150px;
+			}
+		}
+
+		.item:nth-child(3) {
+			img {
+				width: 100%;
+				height: 150px;
+			}
+		}
+	}
+}
+
+@include breakpoint-small {
+	.wrapper__bottom {
+		display: flex;
+		justify-content: end;
+	}
+
+	.link_block {
+		display: none;
+	}
+
+	.link_block__mobile {
+		display: flex;
+		flex-wrap: nowrap;
+		grid-gap: 8px;
+	}
+
+	.link_img {
+		img {
+			width: 14px;
+		}
+	}
+
+	.link_text {
+		font-size: 12px;
+	}
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		grid-gap: 16px;
+
+		img {
+			object-fit: cover;
+		}
+	}
+
+	.item:nth-child(1) {
+		img {
+			height: 200px !important;
+		}
+	}
+
+	.item:nth-child(2) {
+		img {
+			height: 200px !important;
+		}
+	}
+
+	.item:nth-child(3) {
+		img {
+			height: 200px !important;
+		}
+	}
+}

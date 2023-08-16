@@ -1,0 +1,43 @@
+@import '../../../styles/colors';
+@import '../../../styles/media';
+@import '../../../styles/mixins';
+
+.container {
+	padding-top: 40px;
+	max-width: 864px;
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 40px;
+}
+
+.title__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 40px;
+}
+
+.tab {
+	display: flex;
+	grid-gap: 20px;
+	width: max-content;
+}
+
+.tab__button {
+	padding: 16px 24px;
+	border-radius: 40px;
+	outline: 1px solid $colorGrey;
+	color: $colorGrey;
+	box-sizing: border-box;
+}
+
+.link_active {
+	.tab__button {
+		background-color: $colorRed;
+		color: $colorWhite;
+		outline: 1px solid $colorRed;
+	}
+}
