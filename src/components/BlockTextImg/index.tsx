@@ -39,7 +39,7 @@ const BlockTextImg = ({ props, imgSideLeft }: Props) => {
 								<Text children={props.text} />
 							</div>
 							<div className={st.block__button}>
-								<Link to='/simple_window'>
+								<Link to={props.link}>
 									<Button link={props.link} children={props.buttonChildren} />
 								</Link>
 							</div>

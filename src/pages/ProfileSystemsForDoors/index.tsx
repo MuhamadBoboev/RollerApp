@@ -23,7 +23,7 @@ const dateProductInfo2: IProductInfo = {
 	title: 'БАЛКОННАЯ ДВЕРЬ',
 	text: 'Современная балконная дверь из профиля ROLLER выделяется не только красивым внешним видом, но и обеспечивает тепло- и шумоизоляцию комнаты и может быть выполнена в различных вариантах исполнения.',
 	buttonChildren: 'Перейти',
-	link: 'href'
+	link: 'balcony_door_page'
 }
 const ProfileSystemsForDoors = () => {
 	return (

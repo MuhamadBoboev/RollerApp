@@ -1,0 +1,27 @@
+import { SubtitleSmallRed } from '../ui/SubtitleSmallRed'
+import { Text } from '../ui/Text'
+import { TitleSection } from '../ui/TitleSection'
+import st from './lamination.module.scss'
+import img from './lamination.png'
+const Lamination = () => {
+	return (<>
+		<div className={st.container}>
+			<div className={st.wrapper} >
+				<div className={st.title_body} >
+					<div className={st.title_block} >
+						<SubtitleSmallRed textAlign='center' children='Варианты ламинации' />
+						<TitleSection textAlign='center' children='Мы предлагаем различные варианты цветной ламинации профилей ПВХ' />
+					</div>
+					<div className={st.text_block}>
+						<Text textAlign='center' children='Условно их можно разделить на стандартные (популярные) и редко используемые.
+						Стандартные цвета стоят значительно дешевле не стандартных.Стандартные цвета есть в наличии и могут быть изготовленны в сроки обычных белых окон. Всегда в наличии ламинация «под дерево» (ЗОЛОТОЙ ДУБ, ОРЕГОН, ТЕМНЫЙ ДУБ, БОЛОТНЫЙ ДУБ, ПОЛОСАТЫЙ ДУГЛАС, ГОРНАЯ СОСНА, МАХАГОН, СВЕТЛЫЙ ДУБ, ОРЕХ) Редко используемые цвета — ЭТО полностью заказные позиции (большой срок изготовления), профили ламинируются под заказ.' />
+					</div>
+				</div>
+				<div className={st.bl_img} >
+					<img src={img} width={864} height={933} ></img>
+				</div>
+			</div>
+		</div>
+	</>)
+}
+export default Lamination

@@ -33,6 +33,6 @@
   // "include": [
   //   "src"
   // ]
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/models/IBlockInfoFittings.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/mixins';
+
+.container {
+	max-width: 864px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 24px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding-top: 150px;
+}
+
+.items__wrapper {
+	width: 100%;
+}
+
+@include breakpoint-medium {
+	.container {
+		padding-top: 80px;
+	}
+}
+
+@include breakpoint-small {
+	.container {
+		padding-top: 40px;
+	}
+
+	.items__wrapper {
+		// grid-gap: 12px;
+	}
+}

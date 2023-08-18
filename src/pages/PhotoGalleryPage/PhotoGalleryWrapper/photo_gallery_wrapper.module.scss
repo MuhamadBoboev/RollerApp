@@ -3,6 +3,8 @@
 @import '../../../styles/mixins';
 
 .container {
+	box-sizing: border-box;
+	padding: 0 15px;
 	padding-top: 40px;
 	max-width: 864px;
 	margin: 0 auto;
@@ -24,6 +26,7 @@
 	display: flex;
 	grid-gap: 20px;
 	width: max-content;
+	cursor: pointer;
 }
 
 .tab__button {
@@ -39,5 +42,59 @@
 		background-color: $colorRed;
 		color: $colorWhite;
 		outline: 1px solid $colorRed;
+	}
+}
+
+.tab__link {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.tab_active {
+	.tab__button {
+		background-color: $colorRed;
+		color: $colorWhite;
+		outline: 1px solid $colorRed;
+	}
+}
+
+.display_active {
+	display: grid;
+}
+
+.display_none {
+	display: none;
+}
+
+@include breakpoint-medium {
+	.title__block {
+		grid-gap: 10px;
+
+		h2 {
+			text-align: start;
+		}
+	}
+
+	.tab__button {
+		padding: 8px 16px;
+	}
+}
+
+@include breakpoint-small {
+	.tab__button {
+		padding: 6px 12px;
+	}
+
+	.tab {
+		padding: 15px 0;
+		place-self: flex-start;
+		width: 100%;
+		overflow: auto;
+		grid-gap: 10px;
+
+		button {
+			min-width: max-content;
+		}
 	}
 }

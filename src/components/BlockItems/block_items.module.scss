@@ -5,14 +5,30 @@
 .container {
 	display: flex;
 	flex-direction: column;
+	max-width: 864px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0 24px;
 	grid-gap: 23px;
 	padding-top: 80px;
+}
+
+.padding_150 {
+	padding-top: 150px;
 }
 
 .text_footer {
 	p {
 		color: $colorGreyLight;
 	}
+}
+
+.text_footer__show {
+	display: flex !important;
+}
+
+.text_footer__none {
+	display: none !important;
 }
 
 .text_footer {
@@ -27,8 +43,10 @@
 }
 
 .items {
-	@include grid(1fr 1fr, 1fr);
+	box-sizing: border-box;
+	@include grid(1fr 1fr, auto);
 	grid-gap: 20px;
+
 }
 
 .item {
@@ -60,6 +78,9 @@
 }
 
 .title {
+	white-space: wrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	@include fontRoboto500Medium(24px, 150%);
 }
 
@@ -69,6 +90,10 @@
 }
 
 @include breakpoint-medium {
+	.padding_150 {
+		padding-top: 80px;
+	}
+
 	.wrapper {
 		grid-gap: 16px;
 	}
@@ -98,6 +123,10 @@
 }
 
 @include breakpoint-small {
+	.padding_150 {
+		padding-top: 40px;
+	}
+
 	.text_footer__red {
 		font-size: 12px;
 	}

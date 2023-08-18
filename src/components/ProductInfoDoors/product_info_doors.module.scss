@@ -7,10 +7,15 @@
 	justify-content: space-between;
 	align-items: center;
 	grid-gap: 40px;
+	max-width: 912px;
+	margin: 0 auto;
+	padding: 0 24px;
+	box-sizing: border-box;
+	padding-top: 80px;
 }
 
 .info {
-	padding-top: 50px
+	// padding-top: 50px
 }
 
 .text {
@@ -60,6 +65,10 @@
 	width: 100%;
 }
 
+.block__button__none {
+	display: none
+}
+
 .info__image {
 	display: flex;
 	align-items: center;
@@ -95,6 +104,10 @@
 
 
 @include breakpoint-medium {
+	.container {
+		padding-top: 40px;
+	}
+
 	.info__wrapper {
 		grid-gap: 24px;
 	}

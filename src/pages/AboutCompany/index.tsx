@@ -120,7 +120,6 @@ const dateReviewsSlider: IReviewsSlider[] = [
 	}
 ]
 
-
 const AboutCompany = () => {
 	return (
 		<>

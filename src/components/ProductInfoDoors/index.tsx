@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 interface Props {
 	props: dateProps
 	imgSideLeft?: boolean
+	buttonShow?: boolean
 }
 interface dateProps {
 	image?: string
@@ -17,10 +18,10 @@ interface dateProps {
 	buttonChildren?: string
 	link: string
 }
-const ProductInfoDoors = ({ props, imgSideLeft }: Props) => {
+const ProductInfoDoors = ({ props, imgSideLeft, buttonShow = true }: Props) => {
 	return (<>
 		<section className={st.info} >
-			<div className={'_container ' + st.container}>
+			<div className={st.container}>
 				<div className={clsx(
 					st.info__wrapper,
 					imgSideLeft ? st.info__image_left : '',
@@ -38,8 +39,11 @@ const ProductInfoDoors = ({ props, imgSideLeft }: Props) => {
 								<TitleSection children={props.title} />
 								<Text children={props.text} />
 							</div>
-							<div className={st.block__button}>
-								<Link to='/simple_window'>
+							<div className={clsx(
+								st.block__button,
+								buttonShow ? '' : st.block__button__none
+							)}>
+								<Link to={props.link}>
 									<Button link={props.link} children={props.buttonChildren} />
 								</Link>
 							</div>

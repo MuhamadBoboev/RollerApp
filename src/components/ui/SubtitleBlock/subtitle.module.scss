@@ -1,0 +1,40 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+@import "src/styles/media";
+// @import "src/styles/colors";
+
+.text_align__start {
+	text-align: start;
+}
+
+.text_align__center {
+	text-align: center;
+}
+
+.text_align__end {
+	text-align: end;
+}
+
+.subtitle {
+	@include fontRoboto500Medium(24px, 120%);
+	width: 100%;
+}
+
+@include breakpoint-large {
+	.subtitle {
+		text-align: center;
+	}
+}
+
+@include breakpoint-medium {
+	.subtitle {
+		font-size: 20px;
+		text-align: center;
+	}
+}
+
+@include breakpoint-small {
+	.subtitle {
+		font-size: 12px;
+	}
+}

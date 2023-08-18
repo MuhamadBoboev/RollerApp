@@ -7,6 +7,7 @@ import productsInfoImage_2 from './img/productInfo_2.jpg'
 import productsInfoImage_3 from './img/productInfo_3.jpg'
 import productsInfoImage_4 from './img/productInfo_4.jpg'
 import BlockTextImg from "../../components/BlockTextImg"
+
 const bannerDate: IBanner = {
 	title: 'КОМПЛЕКТУЮЩИЕ',
 	text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  ',
@@ -18,21 +19,21 @@ const dateProductInfo1: IProductInfo = {
 	title: 'профильные системы',
 	text: 'Системы профилей ROLLER — это надёжность,	качество и доступность. Это тёплое решение для уюта в каждом доме. Это профиль, которому доверяют!',
 	buttonChildren: 'Перейти',
-	link: '1'
+	link: 'profile_systems_roller'
 }
 const dateProductInfo2: IProductInfo = {
 	image: productsInfoImage_2,
 	title: 'ФУРНИТУРЫ',
 	text: 'Надёжность и длительный срок службы пластиковых окон зависит от используемых материалов и запчастей для окон, а также соблюдения правил установки, является также правильный выбор фурнитуры для окон.',
 	buttonChildren: 'Перейти',
-	link: '2'
+	link: 'fittings_page'
 }
 const dateProductInfo3: IProductInfo = {
 	image: productsInfoImage_3,
 	title: 'ОБШИВОЧНЫЙ ПЛАСТИК',
 	text: 'ПВХ вспененный — листовой синтетический материал из жёсткой пены ПВХ, имеющий регулярную мелкоячеистую структуру и матовую поверхность.',
 	buttonChildren: 'Перейти',
-	link: '3'
+	link: 'casing_plastic_page'
 }
 const dateProductInfo4: IProductInfo = {
 	image: productsInfoImage_4,
