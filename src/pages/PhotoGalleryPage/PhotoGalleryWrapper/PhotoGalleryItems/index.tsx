@@ -13,7 +13,7 @@ const PhotoGalleryItems = ({ items }: Props) => {
 			<ul className={st.items} >
 				{items.map((el) =>
 					<li key={el.id} className={st.item} >
-						<img src={el.image} className={st.item__img} width={422} height={261}>
+						<img src={el.image} className={st.item__img} width={422} height={261} alt='fhotogalery'>
 						</img>
 					</li>
 				)}

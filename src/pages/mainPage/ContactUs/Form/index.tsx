@@ -2,9 +2,9 @@ import st from './form.module.scss'
 import { useForm, SubmitHandler } from "react-hook-form";
 
 enum GenderEnum {
-	female = "female",
-	male = "male",
-	other = "others"
+	female = "Выберите отдел",
+	male = "IT",
+	other = "SMM"
 }
 
 interface IFormInput {
@@ -36,9 +36,9 @@ const Form = () => {
 						</li>
 						<li className={st.form__item} >
 							<select {...register("gender")} className={st.form__selected} >
-								<option className={st.form__option} value="female">female</option>
-								<option value="male">male</option>
-								<option value="other">other</option>
+								<option className={st.form__option} value="otdel">Выберите отдел</option>
+								<option value="IT">IT</option>
+								<option value="SMM">SMM</option>
 							</select>
 						</li>
 						<li className={st.form__item} >

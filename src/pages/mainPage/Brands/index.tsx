@@ -1,53 +1,131 @@
 import st from './brands.module.scss'
-import { Link } from 'react-router-dom'
-import logo_1 from './img/logo_1.svg'
-import logo_2 from './img/logo_2.svg'
-import logo_3 from './img/logo_3.svg'
-import logo_4 from './img/logo_4.svg'
-import logo_1_mobile from './img/logo_1_mobile.svg'
-import { FC, useState } from 'react'
-import ComponentModal from './modalBrands'
-
-// interface BrandsInterface { img: any, certificate: [{item: any}] }
-interface BrandsInterface { img: any }
+import BrandItem from './BrandItem'
+interface BrandsInterface {
+	image: string
+	imageMobile?: string
+	date: BrandInterface[]
+}
+interface BrandInterface {
+	image: string
+	title: string
+	text: string
+}
 
 const brandsDate: BrandsInterface[] = [
 	{
-		img: logo_1
-		// certificate: [
-		// 	{
-		// 		item: logo_1
-		// 	}
-		// ]
+		image: '/assets/image/logo_1.webp',
+		imageMobile: '/assets/image/logo_1_mobile.webp',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/logo_2.webp',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/logo_3.webp',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/logo_4.webp',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
 	},
-	{
-		img: logo_2
-	}, {
-		img: logo_3
-	}, {
-		img: logo_4
-	}
 ]
 
 const Brands: React.FC = () => {
-	const [active, setActive] = useState(false)
-	const clickActive = () => {
-	}
 
 	return (
 		<section id='brands_id' className={'padding_top_150 ' + st.brands}>
-			<div className={'_container ' + st.container} >
+			<div className={st.container} >
 				<h2 className='text_h2' >Наши бренды</h2>
 				<ul className={st.brands__grid} >
 					{brandsDate.map((element, index) =>
-						<li key={element.img}
-							className={st.brand__wrapper + ' ' + st.brand__ + index + 1}>
-							<div className={st.brand__body} >
-								<div className={st.brand__block}>
-									<img className={st.brand__logo} src={element.img} alt='логотип бренда' ></img>
-								</div>
-							</div>
-							<ComponentModal isActive={active} setActive={setActive} />
+						<li className={st.brand__wrapper + ' ' + st.brand__ + index + 1} >
+							<BrandItem branItem={element} index={index} />
 						</li>
 					)}
 				</ul>

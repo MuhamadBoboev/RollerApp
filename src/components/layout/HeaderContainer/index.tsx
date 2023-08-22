@@ -36,22 +36,6 @@ const HeaderContainer: FC = () => {
 									{headerDate.map((el) =>
 										<li className={st.menu__link} >
 											<NavLink
-												// onClick={(event) => {
-												// 	event.preventDefault()
-												// 	if (el.link === '/#brands') {
-												// 		event.preventDefault()
-												// 		if (location.pathname !== '/') {
-												// 			navigate('/brands')
-												// 		} else {
-												// 			const element = document.getElementById('brands')
-												// 			if (element) {
-												// 				element.scrollIntoView({
-												// 					behavior: 'smooth'
-												// 				})
-												// 			}
-												// 		}
-												// 	}
-												// }}
 												className={({ isActive, isPending }) =>
 													isActive ? st.link_active : " "
 												}

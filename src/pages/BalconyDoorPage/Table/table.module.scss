@@ -7,155 +7,172 @@
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 24px;
-	padding-top: 150px;
+	padding-top: 80px;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	grid-gap: 40px;
 }
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	grid-gap: 24px;
-
-}
-
-.title_block {
-	max-width: 750px;
-	margin: 0 auto;
-}
-
-.title_block {
+.title__block {
 	p {
-		text-transform: uppercase;
-	}
-}
-
-.title__block__p {
-	p {
-		text-transform: uppercase;
-		color: $colorRed;
-	}
-}
-
-.table {
-	width: 100%;
-
-
-	tr td:nth-child(1) {
 		color: $colorBlackLight;
 	}
 }
 
-.thead {
-	tr th {
-		vertical-align: baseline;
-		text-align: start;
-		border-bottom: 2px solid $colorLineGrey;
-		padding: 12.5px 20px;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 40px;
+}
 
-		p {
-			width: max-content;
-		}
+.body {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 7px;
+
+	h4 {
+		text-transform: uppercase;
 	}
 }
 
-.tbody {
+.subtitle {
+	h4 {
+		text-align: start;
+	}
+}
 
-	td {
-		border-left: 2px solid $colorLineGrey;
+.items {
+	@include grid(1.5fr 1fr 1.2fr, auto);
+	border-top: 1px solid $colorLineGrey;
+}
+
+.text__li {
+	list-style: none;
+	position: relative;
+	padding-left: 17px;
+
+	p {
+		color: $colorLineGrey;
 	}
 
-	tr td:nth-child(1) {
-		border-left: none;
 
-		p {
-			color: $colorBlackLight;
-		}
+
+	&::after {
+		position: absolute;
+		content: '';
+		top: 9px;
+		left: 5px;
+		width: 2.5px;
+		height: 2.5px;
+		background-color: $colorLineGrey;
+		border-radius: 50%;
 	}
+}
 
-	tr td {
-		vertical-align: baseline;
-		width: 25%;
-		padding: 12.5px 20px;
+.item {
+	padding-top: 24px;
+	padding-left: 32px;
+	padding-right: 20px;
+}
 
-		p {
-			display: flex;
-			justify-self: baseline;
-			align-self: baseline;
-			color: $colorGreyLight;
-		}
-	}
+.item:nth-child(1) {
+	padding-left: 0;
+}
 
-	tr td:nth-child(1) {
-		padding: 12.5px 20px;
-		padding-left: 0;
-	}
+.item:nth-child(3) {
+	padding-right: 0;
+}
+
+.item:nth-child(1) {
+	border-right: 1px solid $colorLineGrey;
+}
+
+.item:nth-child(2) {
+	border-right: 1px solid $colorLineGrey;
+}
+
+.text {
+	font-size: 14px;
+}
+
+.text_big {
+	font-size: 16px;
+	color: $colorLineGrey;
 }
 
 @include breakpoint-medium {
 	.container {
-		padding-top: 40px;
+		padding-top: 24px;
+		grid-gap: 24px;
+	}
+
+	.item {
+		padding-top: 9px;
+		padding-left: 15px;
+		padding-right: 7px;
+	}
+
+	.text {
+		font-size: 10px;
+	}
+
+	.text_big {
+		font-size: 12px;
+		color: $colorLineGrey;
+	}
+
+	.wrapper {
+		grid-gap: 24px;
+	}
+
+	.body {
+		grid-gap: 8px;
 	}
 }
 
 @include breakpoint-small {
 	.container {
+		padding-top: 16px;
 		grid-gap: 16px;
-		padding-top: 40px;
 	}
 
-	.thead {
-		tr th {
-			border-bottom: 0.5px solid $colorLineGrey;
-		}
-
-		tr th {
-			padding: 4px 7px;
-
-			p {
-				font-size: 10px;
-			}
-		}
+	.item {
+		border-top: 1px solid $colorLineGrey;
 	}
 
-	.tbody {
-		td {
-			border-left: 0.5px solid $colorLineGrey;
-		}
+	.items {
+		display: flex;
+		flex-direction: column;
+		border-top: none;
+	}
 
-		tr td:nth-child(1) {
-			border-left: none;
+	.item:nth-child(1) {
+		border-right: none;
+	}
 
-			p {
-				font-size: 8px;
-			}
-		}
+	.item:nth-child(2) {
+		border-right: none;
+	}
 
-		tr td {
-			padding: 10px 8px;
+	.item {
+		padding: 8px 0
+	}
 
-			p {
-				font-size: 8px;
-			}
-		}
-
-		tr td:nth-child(1) {
-			padding: 10px 8px;
-			padding-left: 0;
-		}
+	.text_big {
+		font-size: 10px;
 	}
 
 	.wrapper {
-		grid-gap: 10px;
+		grid-gap: 0px;
 	}
 
-	.text_bottom {
-		p {
-			font-size: 10px;
-		}
+	.text_footer {
+		padding-top: 8px;
+		border-top: 1px solid $colorLineGrey;
 	}
 
-
+	.body {
+		grid-gap: 8px;
+	}
 }

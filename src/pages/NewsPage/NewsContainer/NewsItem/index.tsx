@@ -1,40 +1,44 @@
-import { Link } from "react-router-dom"
 import { INewsItems } from "../../../../models/INewsItems"
 import st from './news_item.module.scss'
 import { Text } from "../../../../components/ui/Text"
-import news_link_img from './go_news.svg'
+import ComponentModal from "./modal"
+import { useState } from "react"
+import ComponentModalNew from "./modalNew"
 
 interface Props {
-	item: INewsItems
+	items: INewsItems
 }
-const NewsItem = ({ item }: Props) => {
 
+const NewsItem = ({ items }: Props) => {
+	const [modalActive, setModalActive] = useState(false)
 	return (<>
 		<li className={st.item}>
 			<div className={st.img_block} >
-				<img className={st.img} width={348} height={220} src={item.image} />
+				<img className={st.img} width={348} height={220} src={items.image} />
 			</div>
 			<div className={st.item__text_block} >
 				<div className={st.item__body} >
 					<div className={st.item__top} >
 						<p className={st.item__subtitle}>
-							{item.data}
+							{items.data}
 						</p>
 						<div className={st.item__bl_text} >
 							<p className={st.item__title}>
-								{item.title}
+								{items.title}
 							</p>
-							<Text children={item.text} />
+							<Text children={items.text} />
 						</div>
 					</div>
-					<div className={st.item__bottom} >
-						<Link className={st.item__link} to={item.link} children='Больше' />
+					<div className={st.item__bottom} onClick={() => setModalActive(true)} >
+						<div className={st.item__link} children='Больше' />
 						<div className={st.item_link_img} >
-							<img src={news_link_img} width={20} />
+							<img src={'/assets/image/arrow.svg'} width={20} />
 						</div>
 					</div>
 				</div>
 			</div>
+			{/* <ComponentModal dataModal={items.ItemNewsDate} active={modalActive} setActive={setModalActive} /> */}
+			<ComponentModalNew dataModal={items.ItemNewsDate} active={modalActive} setActive={setModalActive} />
 		</li>
 	</>
 	)

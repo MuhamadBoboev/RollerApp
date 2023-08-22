@@ -1,60 +1,175 @@
 import st from './partners.module.scss'
-import partnerLogo_1 from './img/partnerLogo_1.svg'
-import partnerLogo_2 from './img/partnerLogo_2.svg'
-import partnerLogo_3 from './img/partnerLogo_3.svg'
-import partnerLogo_4 from './img/partnerLogo_4.svg'
-import partnerLogo_5 from './img/partnerLogo_5.svg'
-import { useState } from 'react'
-import ComponentModal from './modal'
 
+import PartnerItem from './PartnerItem'
 interface PartnersInterface {
-	img: string
+	image: string
+	date: PartnerInterface[]
+}
+interface PartnerInterface {
+	image: string
+	title: string
+	text: string
 }
 
-
-const partnersDate:PartnersInterface[] = [
-	{img: partnerLogo_1},
-	{img: partnerLogo_2},
-	{img: partnerLogo_3},
-	{img: partnerLogo_4},
-	{img: partnerLogo_5},
+const PartnersDate: PartnersInterface[] = [
+	{
+		image: '/assets/image/partnerLogo_1.svg',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Сертификат',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/partnerLogo_2.svg',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/partnerLogo_3.svg',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/partnerLogo_4.svg',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	}, {
+		image: '/assets/image/partnerLogo_5.svg',
+		date: [
+			{
+				image: '/assets/image/certificate_1.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: '/assets/image/certificate_2.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_3.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_4.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}, {
+				image: 'assets/image/certificate_5.webp',
+				title: 'Lorem ipsum',
+				text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+			}
+		]
+	},
 ]
 
-const Partners = () => {
-	const [active, setActive] = useState(false)
 
-	return(
-	<section className={'padding_top_150 ' + st.partners}>
-		<div className={'_container ' + st.container} >
-			<div className={st.partners__title_body} >
-				<h2 className={'text_h2 ' + st.partners__title} >наши партнёры</h2>
-				<div className={st.partners__text_block} >
-					<p className={st.partners__text} >
-						Мы предоставляем высокое качество работ и точные 
-						сроки исполнения заказа. Используем в производстве 
-						проверенные немецкие технологии и оборудование. 
-						Высококачественное сырье завозим из Германии, Турции,
-						России, Казахстан и Китая
-					</p>
+
+const Partners = () => {
+
+	return (
+		<section className={'padding_top_150 ' + st.partners}>
+			<div className={'_container ' + st.container} >
+				<div className={st.partners__title_body} >
+					<h2 className={'text_h2 ' + st.partners__title} >наши партнёры</h2>
+					<div className={st.partners__text_block} >
+						<p className={st.partners__text} >
+							Мы предоставляем высокое качество работ и точные
+							сроки исполнения заказа. Используем в производстве
+							проверенные немецкие технологии и оборудование.
+							Высококачественное сырье завозим из Германии, Турции,
+							России, Казахстан и Китая
+						</p>
+					</div>
 				</div>
-			</div>
-			{/* <ComponentModal/> */}
-			<ul className={st.partners__items} >
-				{partnersDate.map((el)=>
-					<li  
+				<ul className={st.partners__items} >
+					{PartnersDate.map((el) =>
+						<li
 							className={st.partner__item}
-							>
-						<div className={st.partner__body} >
-							<div className={st.partner__bl_img} >
-								<img className={st.partners__img} src={el.img} ></img>
-							</div>
-						</div>
-						{/* <ComponentModal/> */}
-					</li>
-				)}
-			</ul>
-		</div>
-	</section>)
+						>
+							<PartnerItem partnerItem={el} />
+						</li>
+					)}
+				</ul>
+			</div>
+		</section>)
 }
 
 export default Partners

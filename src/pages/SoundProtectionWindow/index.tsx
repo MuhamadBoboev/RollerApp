@@ -3,7 +3,6 @@ import Statistics from "../../components/Statistics"
 import Timeline from "../../components/Timeline"
 import { IBanner } from "../../models/IBanner"
 import { ITimeline } from "../../models/ITimeline"
-import img_banner_1 from './img_1.jpg'
 const dateTimelineItems: ITimeline[] = [
 	{
 		key: 1,
@@ -25,7 +24,7 @@ const dateTimelineItems: ITimeline[] = [
 const bannerDate: IBanner = {
 	title: 'ШУМОЗАЩИТНОЕ ОКНО',
 	text: 'Мы рекомендуем это решение для квартир и коттеджей, находящихся в непосредственной близости от автомагистралей, дорог с оживлённым движением, аэропортов и прочих источников шума.',
-	image: img_banner_1,
+	image: '/assets/image/sound_banner.webp',
 	link: 'Бесплатный замер'
 }
 interface Props {

@@ -3,7 +3,6 @@ import st from './footer.module.scss'
 import logoFooter from './img/footer_logo.svg'
 import socialLogo_1 from './img/socialLogo_1.svg'
 import socialLogo_2 from './img/socialLogo_2.svg'
-import socialLogo_3 from './img/socialLogo_3.svg'
 import socialLogo_4 from './img/socialLogo_4.svg'
 import socialLogo_5 from './img/socialLogo_5.svg'
 
@@ -13,9 +12,9 @@ const Footer = () => {
 			<div className={'_container ' + st.container} >
 				<div className={st.footer__body} >
 					<div className={st.footer__bl_first}>
-						<div className={st.footer__bl_logo}>
-							<img className={st.footer__logo} src={logoFooter} alt='Логотип сайта' ></img>
-						</div>
+						<Link to='/' className={st.footer__bl_logo}>
+							<img className={st.footer__logo} src={logoFooter} width={222} height={48} alt='Логотип сайта' ></img>
+						</Link>
 						<div className={st.footer__link_items} >
 							<Link to='/' className={st.footer__h4} ><h4>Главная</h4></Link>
 							<ul className={st.footer__links} >
@@ -62,20 +61,20 @@ const Footer = () => {
 						</h4>
 						<ul className={st.footer__socials} >
 							<li className={st.footer__social} >
-								<a href='' className={st.footer__social_link}>
+								<a href='https://www.facebook.com/profile.php?id=100093955908004' className={st.footer__social_link}>
 									<img src={socialLogo_1} ></img>
 								</a>
 							</li>
 							<li className={st.footer__social} >
-								<a href='' className={st.footer__social_link}>
+								<a href='https://www.instagram.com/roller.tj/' className={st.footer__social_link}>
 									<img src={socialLogo_2} ></img>
 								</a>
 							</li>
-							<li className={st.footer__social} >
+							{/* <li className={st.footer__social} >
 								<a href='' className={st.footer__social_link}>
 									<img src={socialLogo_3} ></img>
 								</a>
-							</li>
+							</li> */}
 							<li className={st.footer__social} >
 								<a href='' className={st.footer__social_link}>
 									<img src={socialLogo_4} ></img>
@@ -94,13 +93,13 @@ const Footer = () => {
 						</h3>
 						<ul className={st.footer__contacts} >
 							<li className={st.footer__contact_item} >
-								<a href='' className={'text ' + st.footer__contact_link} >
-									+992 907 54-50-44
+								<a href='tel:+992 700-600-700' className={'text ' + st.footer__contact_link} >
+									+992 700-600-700
 								</a>
 							</li>
 							<li className={st.footer__contact_item} >
-								<a href='' className={'text ' + st.footer__contact_link} >
-									info@nurplast.tj
+								<a href='mailto:info@roller.tj' className={'text ' + st.footer__contact_link} >
+									info@roller.tj
 								</a>
 							</li>
 						</ul>

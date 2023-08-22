@@ -1,20 +1,13 @@
 import OtherBanner from "../../components/OtherBanner"
 import { IBanner } from "../../models/IBanner"
-import fotoBanner from './other_banner_5.jpg'
 import Сharacteristics from './Сharacteristics'
 import { IСharacteristicsCategories } from '../../models/IСharacteristicsCategories'
-import foto_1 from './Сharacteristics/roller_ch.svg'
-import foto_2 from './Сharacteristics/unopen_ch.svg'
-import foto_3 from './Сharacteristics/econline_ch.svg'
 import BlockItems from "../../components/BlockItems"
 import { IBlockItems } from "../../models/IBlockItems"
-import img_1 from './iblock_1.svg'
-import img_2 from './iblock_2.svg'
-import img_3 from './iblock_3.svg'
-import img_4 from './iblock_4.svg'
+
 import Lamination from "../../components/Lamination"
 const dateBanner: IBanner = {
-	image: fotoBanner,
+	image: '/assets/image/ProfileSystemsBunner.webp',
 	title: 'Профильные Системы ROLLER',
 	text: 'Системы профилей NURPLAST — это надёжность, качество	и доступность. Это тёплое решение для уюта в каждом доме. Это профиль, которому доверяют!',
 }
@@ -22,7 +15,7 @@ const dateCharacteristics: IСharacteristicsCategories[] = [
 	{
 		name: 'roller',
 		id: 1,
-		image: foto_1,
+		image: '/assets/image/Сharacteristics_1.webp',
 		items: [
 			{
 				id: 1,
@@ -69,7 +62,7 @@ const dateCharacteristics: IСharacteristicsCategories[] = [
 	}, {
 		name: 'ecoline',
 		id: 2,
-		image: foto_2,
+		image: '/assets/image/Сharacteristics_2.webp',
 		items: [
 			{
 				id: 1,
@@ -92,7 +85,7 @@ const dateCharacteristics: IСharacteristicsCategories[] = [
 	}, {
 		name: 'unopen',
 		id: 3,
-		image: foto_3,
+		image: '/assets/image/Сharacteristics_3.webp',
 		items: [
 			{
 				id: 1,
@@ -117,19 +110,19 @@ const dateCharacteristics: IСharacteristicsCategories[] = [
 
 const dateItemsBlocks: IBlockItems[] = [
 	{
-		image: img_1,
+		image: '/assets/image/iblock_1.svg',
 		name: 'Энерго эффективность',
 		text: 'Стабильная многокамерная система с превосходными	изолирующими характеристиками',
 	}, {
-		image: img_2,
+		image: '/assets/image/iblock_2.svg',
 		name: 'Защита от шума',
 		text: 'Высокая шумоизоляция обеспечивает тишину и спокойствие Вашего дома',
 	}, {
-		image: img_3,
+		image: '/assets/image/iblock_3.svg',
 		name: 'Дизайн и долговечность',
 		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ',
 	}, {
-		image: img_4,
+		image: '/assets/image/iblock_4.svg',
 		name: 'Прочность и надёжность',
 		text: 'Использование специальных армирующих	усилителей обеспечивает высокую	стабильность конструкции',
 	}

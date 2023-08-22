@@ -2,7 +2,7 @@ import { Subtitle } from '../ui/Subtitle';
 import { Text } from '../ui/Text';
 import { TitleSection } from '../ui/TitleSection';
 import st from './OurServices.module.scss'
-import ourServiceImg from './ourService.jpg'
+
 
 const OurServices = () => {
 	return (
@@ -20,7 +20,7 @@ const OurServices = () => {
 				<div className={st.our_services__wrapper}>
 					<div className={st.our_services__left} >
 						<div className={st.our_services__bl_img}>
-							<img width={408} height={276} src={ourServiceImg} ></img>
+							<img width={408} height={276} src={'/assets/image/ourService.webp'} ></img>
 						</div>
 					</div>
 					<div className={st.our_services__bl_text}>

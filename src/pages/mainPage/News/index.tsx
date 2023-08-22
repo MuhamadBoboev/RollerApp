@@ -1,7 +1,5 @@
 import st from './news.module.scss'
-import newsImg_1 from './img/newsImg_1.jpg'
-import newsImg_2 from './img/newsImg_2.jpg'
-import newsImg_3 from './img/newsImg_3.jpg'
+
 import { Link } from 'react-router-dom';
 
 interface NewsInterface {
@@ -14,23 +12,23 @@ interface NewsInterface {
 
 const newsDate: NewsInterface[] = [
 	{
-		img: newsImg_1,
+		img: '/assets/image//newsImg_1.webp',
 		data: '17 Сентябрь, 2019',
 		title: 'Окна ROLLER в экстримальных условиях',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit',
-		link: 'string',
+		link: 'News',
 	}, {
-		img: newsImg_2,
+		img: '/assets/image//newsImg_2.webp',
 		data: '17 Сентябрь, 2019',
 		title: 'Окна ROLLER в экстримальных условиях',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit',
-		link: 'string',
+		link: 'News',
 	}, {
-		img: newsImg_3,
+		img: '/assets/image//newsImg_3.webp',
 		data: '17 Сентябрь, 2019',
 		title: 'Окна ROLLER в экстримальных условиях',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit',
-		link: 'string',
+		link: 'News',
 	}
 ]
 
@@ -51,7 +49,7 @@ const News = () => {
 					<li className={st.news__wrapper} >
 						<div className={st.news__img_block} >
 							<div className={st.news__img_body}>
-								<img src={el.img} ></img>
+								<img src={el.img} width={275} height={250} alt='news'></img>
 							</div>
 						</div>
 						<div className={st.news__text_wrapper} >
@@ -66,9 +64,9 @@ const News = () => {
 									{el.text}
 								</p>
 							</div>
-							<a href={el.link} className={'button_white ' + st.news__button} >
+							<Link to={el.link} className={'button_white ' + st.news__button} >
 								Перейти
-							</a>
+							</Link>
 						</div>
 					</li>
 				)}

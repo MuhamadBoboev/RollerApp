@@ -1,9 +1,7 @@
 import { Text } from '../../../components/ui/Text'
 import { TitleSection } from '../../../components/ui/TitleSection'
 import st from './contacts.module.scss'
-import tell from './img/tell_svg.svg'
-import location from './img/location_svg.svg'
-import mail from './img/mail_svg.svg'
+
 import MapMain from '../../../components/Map'
 const Contacts = () => {
 	return (<>
@@ -26,15 +24,15 @@ const Contacts = () => {
 								<div className={st.info__block} >
 									<div className={st.info__item} >
 										<div className={st.info__img_bl} >
-											<img src={location} width={20} height={20}  ></img>
+											<img src={'/assets/image/location_svg.svg'} width={20} height={20}  ></img>
 										</div>
-										<p className={st.info_text} >
+										<a href='улица Мирали Махмадали 88' className={st.info_text} >
 											улица Мирали Махмадали 88
-										</p>
+										</a>
 									</div>
 									<div className={st.info__item} >
 										<div className={st.info__img_bl} >
-											<img src={tell} width={20} height={20}  ></img>
+											<img src={'/assets/image/tell_svg.svg'} width={20} height={20}  ></img>
 										</div>
 										<a className={st.info__link} href='tel:+992 700-600-700' >
 											+992 700-600-700
@@ -51,7 +49,7 @@ const Contacts = () => {
 								<div className={st.info__block} >
 									<div className={st.info__item} >
 										<div className={st.info__img_bl} >
-											<img src={tell} width={20} height={20}  ></img>
+											<img src={'/assets/image/tell_svg.svg'} width={20} height={20}  ></img>
 										</div>
 										<a className={st.info__link} href='tel:+992 700-600-700' >
 											+992 700-600-700
@@ -59,11 +57,11 @@ const Contacts = () => {
 									</div>
 									<div className={st.info__item} >
 										<div className={st.info__img_bl} >
-											<img src={mail} width={20} height={20}  ></img>
+											<img src={'/assets/image/mail_svg.svg'} width={20} height={20}  ></img>
 										</div>
-										<p className={st.info_text} >
+										<a href='mailto:yuldoshev@roller.tj' className={st.info_text} >
 											yuldoshev@roller.tj
-										</p>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -82,7 +80,7 @@ const Contacts = () => {
 									</div>
 									<div className={st.info__item} >
 										<div className={st.info__img_bl} >
-											<img src={tell} width={20} height={20}  ></img>
+											<img src={'/assets/image/tell_svg.svg'} width={20} height={20}  ></img>
 										</div>
 										<a className={st.info__link} href='tel:+992 700-600-700' >
 											+992 700-600-700

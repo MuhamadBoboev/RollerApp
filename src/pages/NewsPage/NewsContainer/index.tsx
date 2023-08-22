@@ -14,7 +14,7 @@ const NewsContainer = ({ items }: Props) => {
 				<TitleSection children='Последние новости' textAlign='center' />
 				<ul className={st.news__items}>
 					{items.map((el) =>
-						<NewsItem item={el} />
+						<NewsItem items={el} />
 					)}
 				</ul>
 			</div>

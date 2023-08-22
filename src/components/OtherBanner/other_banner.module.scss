@@ -45,6 +45,7 @@
 }
 
 .title {
+	text-transform: uppercase;
 	text-align: center;
 	@include fontRoboto600Semi-Bold(48px, 100%);
 	color: $colorWhite;

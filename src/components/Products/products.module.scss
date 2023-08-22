@@ -6,6 +6,9 @@
 	flex-direction: column;
 	align-items: center;
 	grid-gap: 40px;
+	max-width: 912px;
+	padding: 0 24px;
+	margin: 0 auto;
 }
 
 .products_items {
@@ -99,6 +102,8 @@
 
 @include breakpoint-small {
 	.container {
+		padding-left: 16px;
+		padding-right: 16px;
 		grid-gap: 16px;
 	}
 

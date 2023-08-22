@@ -60,6 +60,7 @@
 .item__link {
 	@include fontRoboto500Medium(20px, 100%);
 	color: $colorRed;
+	cursor: pointer;
 }
 
 .item_link_img {

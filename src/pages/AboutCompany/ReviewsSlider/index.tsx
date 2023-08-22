@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import infoSvg from './slider_info.svg'
+// import infoSvg from './slider_info.svg'
 import { Subtitle } from '../../../components/ui/Subtitle';
 import { TitleSection } from '../../../components/ui/TitleSection';
 import { Text } from '../../../components/ui/Text';
-import foto_people from './profile_foto.jpg'
-import { DateReviews } from './DateReviews';
+// import foto_people from './profile_foto.jpg'
+// import { DateReviews } from './DateReviews';
 import { IReviewsSlider } from '../../../models/IReviewsSlider';
 
 interface Props {
@@ -63,7 +63,7 @@ const ReviewsSlider = ({ title, subtitle, items }: Props) => {
 								<div className={st.slider__body}>
 									<div className={st.slide_top}>
 										<div className={st.slider__svg}>
-											<img src={infoSvg} width={40} height={40} ></img>
+											<img src={'/assets/image/slider_info.svg'} width={40} height={40} ></img>
 										</div>
 										<div className={st.block__text}>
 											<Text
@@ -73,7 +73,7 @@ const ReviewsSlider = ({ title, subtitle, items }: Props) => {
 									</div>
 									<div className={st.info} >
 										<div className={st.info__bl_image} >
-											<img src={foto_people} width={76} height={76} ></img>
+											<img src={el.image} width={76} height={76} ></img>
 										</div>
 										<div className={st.info__block}>
 											<p className={st.info__name}>

@@ -3,7 +3,7 @@ import Statistics from "../../components/Statistics"
 import Timeline from "../../components/Timeline"
 import { IBanner } from "../../models/IBanner"
 import { ITimeline } from "../../models/ITimeline"
-import img_1 from './img_1.png'
+
 const dateTimelineItems: ITimeline[] = [
 	{
 		key: 1,
@@ -25,7 +25,7 @@ const dateTimelineItems: ITimeline[] = [
 const bannerDate: IBanner = {
 	title: 'ОКНО ДЛЯ ДЕТСКОЙ',
 	text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  ',
-	image: img_1,
+	image: '/assets/image/bunner_123.webp',
 	link: 'Бесплатный замер'
 }
 interface Props {

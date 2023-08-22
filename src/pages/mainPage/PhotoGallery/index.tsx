@@ -1,9 +1,6 @@
 import { TitleSection } from '../../../components/ui/TitleSection'
 import st from './photo_gallery.module.scss'
-import img_1 from './img/img_1.jpg'
-import img_2 from './img/img_2.jpg'
-import img_3 from './img/img_3.jpg'
-import arrow from './img/arrow.svg'
+
 import { Link } from 'react-router-dom'
 
 const PhotoGallery = () => {
@@ -17,19 +14,19 @@ const PhotoGallery = () => {
 							Посмотреть все
 						</p>
 						<div className={st.link_img} >
-							<img src={arrow} width={24} ></img>
+							<img src={'/assets/image/arrow.svg'} width={24} ></img>
 						</div>
 					</Link>
 				</div>
 				<div className={st.items} >
 					<div className={st.item} >
-						<img src={img_1} width={569} height={350} ></img>
+						<img src={'/assets/image/PhotoGallery_1.webp'} width={569} height={350} ></img>
 					</div>
 					<div className={st.item} >
-						<img src={img_2} width={275} height={165} ></img>
+						<img src={'/assets/image/PhotoGallery_2.webp'} width={275} height={165} ></img>
 					</div>
 					<div className={st.item} >
-						<img src={img_3} width={275} height={165} ></img>
+						<img src={'/assets/image/PhotoGallery_3.webp'} width={275} height={165} ></img>
 					</div>
 				</div>
 				<div className={st.wrapper__bottom}>
@@ -38,7 +35,7 @@ const PhotoGallery = () => {
 							Посмотреть все
 						</p>
 						<div className={st.link_img} >
-							<img src={arrow} width={24} ></img>
+							<img src={'/assets/image/arrow.svg'} width={24} ></img>
 						</div>
 					</Link>
 				</div>

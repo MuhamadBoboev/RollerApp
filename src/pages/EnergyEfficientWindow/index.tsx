@@ -3,7 +3,7 @@ import Statistics from "../../components/Statistics"
 import Timeline from "../../components/Timeline"
 import { IBanner } from "../../models/IBanner"
 import { ITimeline } from "../../models/ITimeline"
-import img_banner_1 from './img_1.jpg'
+
 const dateTimelineItems: ITimeline[] = [
 	{
 		key: 1,
@@ -25,7 +25,7 @@ const dateTimelineItems: ITimeline[] = [
 const bannerDate: IBanner = {
 	title: 'ЭНЕРГОЭФФЕКТИВНОЕ ОКНО',
 	text: 'Энергоэффективные пластиковые окна сохраняют микроклимат внутри помещения, уменьшают расходы на отопление зимой и на кондиционирование летом. Каждый компонент окна — рама, стеклопакет и фурнитура — вносят свой вклад в энергосбережение.',
-	image: img_banner_1,
+	image: '/assets/image/energy_bunner.webp',
 	link: 'Бесплатный замер'
 }
 interface Props {

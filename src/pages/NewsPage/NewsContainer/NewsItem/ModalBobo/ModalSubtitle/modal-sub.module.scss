@@ -1,0 +1,17 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.subtitle {
+  margin-top: -20px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: $text2;
+
+  @media (max-width: $mobileLarge) {
+  }
+
+  @media (max-width: $mobile) {
+
+  }
+}

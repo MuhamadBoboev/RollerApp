@@ -3,7 +3,6 @@ import Statistics from "../../components/Statistics"
 import Timeline from "../../components/Timeline"
 import { IBanner } from "../../models/IBanner"
 import { ITimeline } from "../../models/ITimeline"
-import img_banner_1 from './simple_window_img_1.png'
 const dateTimelineItems: ITimeline[] = [
 	{
 		key: 1,
@@ -25,7 +24,7 @@ const dateTimelineItems: ITimeline[] = [
 const bannerDate: IBanner = {
 	title: 'ПРОСТОЕ ОКНО',
 	text: 'Если вам необходимо недорогое,	но качественное решение для остекления.',
-	image: img_banner_1,
+	image: '/assets/image/simple_window_img_1.webp',
 	link: 'Бесплатный замер'
 }
 interface Props {

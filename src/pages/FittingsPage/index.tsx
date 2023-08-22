@@ -1,122 +1,16 @@
 import { IBanner } from "../../models/IBanner"
-import Сharacteristics from './Сharacteristics'
-import { IСharacteristicsCategories } from '../../models/IСharacteristicsCategories'
-import foto_1 from './Сharacteristics/roller_ch.svg'
-import foto_2 from './Сharacteristics/unopen_ch.svg'
-import foto_3 from './Сharacteristics/econline_ch.svg'
-import { IBlockItems } from "../../models/IBlockItems"
-import Lamination from "../../components/Lamination"
 import Banner from "../../components/Banner"
 import { ITimeline } from "../../models/ITimeline"
-import img_banner_1 from './img_banner_1.jpg'
 import Timeline from "../../components/Timeline"
 import Accordion from "../../components/Accordion"
 import { IAccordion } from "../../models/IAccordion"
-import img from './img_321.jpg'
 import BlockInfoFittings from "../../components/BlockInfoFittings"
 import { IBlockInfoFittings } from "../../models/IBlockInfoFittings"
-
-const dateCharacteristics: IСharacteristicsCategories[] = [
-	{
-		name: 'roller',
-		id: 1,
-		image: foto_1,
-		items: [
-			{
-				id: 1,
-				text: 'Количество камер',
-				character: '5'
-			}, {
-				id: 2,
-				text: 'Монтажная ширина (мм)',
-				character: '70'
-			}, {
-				id: 3,
-				text: 'Толщина стеклопакета',
-				character: 'от 4 до 42'
-			}, {
-				id: 4,
-				text: 'Сопротивление теплопередаче (с установленным армированием), м²С/Вт',
-				character: '0,78'
-			}, {
-				id: 5,
-				text: 'Исполнения',
-				character: 'Белое, Цветное'
-			}, {
-				id: 6,
-				text: 'Цвета уплотнений',
-				character: 'Чёрный, Серый, Карамель'
-			}, {
-				id: 7,
-				text: 'Ширина комбинации и рама-створка в световом проеме(типовой вариант)',
-				character: '118'
-			}, {
-				id: 8,
-				text: 'Высота фальца, мм',
-				character: '21'
-			}, {
-				id: 9,
-				text: 'Материал уплотнений',
-				character: 'АРТК, Силикон'
-			}, {
-				id: 10,
-				text: 'Количество контуров уплотнения',
-				character: '2'
-			}
-		]
-	}, {
-		name: 'ecoline',
-		id: 2,
-		image: foto_2,
-		items: [
-			{
-				id: 1,
-				text: 'Количество камер',
-				character: '5'
-			}, {
-				id: 1,
-				text: 'Монтажная ширина (мм)',
-				character: '70'
-			}, {
-				id: 1,
-				text: 'Толщина стеклопакета',
-				character: 'от 4 до 42'
-			}, {
-				id: 1,
-				text: 'Сопротивление теплопередаче (с установленным армированием), м²С/Вт',
-				character: '0,78'
-			}
-		]
-	}, {
-		name: 'unopen',
-		id: 3,
-		image: foto_3,
-		items: [
-			{
-				id: 1,
-				text: 'Количество камер',
-				character: '5'
-			}, {
-				id: 1,
-				text: 'Монтажная ширина (мм)',
-				character: '70'
-			}, {
-				id: 1,
-				text: 'Толщина стеклопакета',
-				character: 'от 4 до 42'
-			}, {
-				id: 1,
-				text: 'Сопротивление теплопередаче (с установленным армированием), м²С/Вт',
-				character: '0,78'
-			}
-		]
-	}
-]
 
 const bannerDate: IBanner = {
 	title: 'ФУРНИТУРЫ',
 	text: 'Окна ПВХ – пример гармоничного сочетания практичности,	высоких эстетических качеств и доступной стоимости.',
-	image: img_banner_1,
+	image: '/assets/image/FittingsPage_banner.webp',
 	link: 'Бесплатный замер'
 }
 const dateTimelineItems: ITimeline[] = [
@@ -595,7 +489,7 @@ const dateAccordion: IAccordion[] = [
 	},
 ]
 const dateBlockInfo: IBlockInfoFittings = {
-	image: img,
+	image: '/assets/image/img_321a.webp',
 	title: 'Основные виды фурнитуры для пластиковых окон',
 	text: 'Порой все положительные характеристики качественных пластиковых окон от ведущих производителей может свести на нет подбор неподходящей либо просто фурнитуры сомнительного качества. Со временем обнаружатся определенные дефекты, нарушающие нормальную эксплуатацию данной конструкции. Возможно, станет труднее открывать створки. Или начнет заедать поворотный механизм. Важно лишь одно: для обеспечения нормального функционирования всех элементов пластикового окна необходимо подобрать наиболее подходящую фурнитуру. В этой статье мы подробно рассмотрим все её виды, существующие в настоящее время.',
 	linkButton: 'string'

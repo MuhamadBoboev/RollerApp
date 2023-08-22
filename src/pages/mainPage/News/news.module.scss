@@ -7,19 +7,20 @@
 	flex-direction: column;
 	grid-gap: 40px;
 }
-.news__header {
-	
-}
+
+.news__header {}
+
 .news__items {
 	@include grid(1fr 1fr 1fr, 1fr);
 	grid-gap: 20px;
 }
+
 .news_header_title {
 	text-align: center;
 }
-.news__bl_header_link {
 
-}
+.news__bl_header_link {}
+
 .news__img_block {
 	img {
 
@@ -28,54 +29,66 @@
 		height: auto;
 	}
 }
+
 .news__wrapper {
 	display: flex;
 	flex-direction: column;
 	grid-gap: 24px;
 }
+
 .news__data {
 	text-align: center;
 }
+
 .news__title {
 	text-align: center;
 }
+
 .news__text {
 	text-align: center;
 }
+
 .news__text_wrapper {
 	display: flex;
 	flex-direction: column;
 	grid-gap: 24px;
 }
+
 .news__text_block {
 	display: flex;
 	flex-direction: column;
 	grid-gap: 16px;
 }
+
 .news__title {
 	@include fontRoboto600Semi-Bold(18px, 120%);
 
 }
+
 .news__data {
 	color: $colorRed;
 }
+
 .news__button {
-	outline: 1px solid red;
+	outline: 1px solid $colorRed;
 	text-align: center;
 }
-.news__bl_header_link {
-}
+
+.news__bl_header_link {}
+
 .news__header_link {
 	padding-right: 35px;
 	position: relative;
 	color: $colorRed;
 }
+
 .news__header_link {
 
 	display: block;
 	width: max-content;
 
 }
+
 .news__header_link::after {
 	position: absolute;
 	content: '';
@@ -83,7 +96,7 @@
 	right: 0;
 	width: 24px;
 	height: 10px;
-	background-image: url('./img/arrow.svg');
+	background-image: url('../../../../public/assets/image/arrow.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -92,12 +105,15 @@
 	.container {
 		grid-gap: 24px;
 	}
+
 	.news__items {
 		grid-template-columns: 1fr 1fr;
+
 		li:nth-child(n + 3) {
 			display: none;
 		}
 	}
+
 	.news__img_body {
 		img {
 			width: 100%;
@@ -105,48 +121,60 @@
 			object-fit: inherit;
 		}
 	}
+
 	.news__text_wrapper {
 		align-items: center;
 	}
+
 	.news__wrapper {
 		grid-gap: 16px;
 	}
+
 	.news__button {
 		width: max-content;
-		
+
 		padding: 16px 50px;
 	}
+
 	.news__text_block {
 		padding: 0 10px;
 	}
 }
+
 @include breakpoint-small {
 	.news__items {
 		grid-gap: 16px;
 	}
+
 	.news__wrapper {
 		grid-gap: 8px;
 	}
+
 	.news__text_wrapper {
 		grid-gap: 8px;
 	}
+
 	.news__text_block {
 		grid-gap: 8px;
 		padding: 0;
 		// text-align: left;
 	}
+
 	.news__data {
 		text-align: start;
 		font-size: 12px;
 	}
+
 	.news__title {
 		text-align: start;
 		font-size: 12px;
 	}
+
 	.news__text {
 		text-align: start;
 		font-size: 10px;
 	}
+
 	.news__button {
 		font-size: 12px;
 		padding: 12px 47px;

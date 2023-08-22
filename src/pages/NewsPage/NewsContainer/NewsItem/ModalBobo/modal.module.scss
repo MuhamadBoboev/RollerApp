@@ -1,0 +1,100 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop {
+  background: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.content {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  max-height: 100%;
+  overflow: auto;
+  padding: 40px 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: $mobileLarge) {
+    position: absolute;
+    bottom: 0;
+    max-width: none;
+    overflow: auto;
+    padding: 80% 0 0;
+  }
+}
+
+.main {
+  background: #fff;
+  width: 100%;
+  border-radius: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  //min-height: 1000px;
+  position: relative;
+
+  @media (max-width: $mobileLarge) {
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.close {
+  background: none;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  width: 24px;
+  height: 24px;
+  z-index: 99;
+  background: rgba(249, 249, 249, 0.78);
+  backdrop-filter: blur(27.1828px);
+  border-radius: 50%;
+  transition-property: transform, opacity;
+  transition-duration: 250ms;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $primary;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+}

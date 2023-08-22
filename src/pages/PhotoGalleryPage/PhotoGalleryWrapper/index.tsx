@@ -1,8 +1,6 @@
-import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { TitleSection } from '../../../components/ui/TitleSection'
 import PhotoGalleryItems from './PhotoGalleryItems'
 import st from './photo_gallery_wrapper.module.scss'
-import Choice from '../../mainPage/AdvantageChoice/Choice/index';
 import { Text } from '../../../components/ui/Text';
 import { IGalleryCategory } from '../../../models/IPhotoGallery';
 import { useState } from 'react';

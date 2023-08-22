@@ -1,11 +1,6 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import st from './products.module.scss'
-import product1 from './img/product1.svg'
-import product2 from './img/product2.svg'
-import product3 from './img/product3.svg'
-import product4 from './img/product4.svg'
 import { Link } from 'react-router-dom'
-// import Products from './Products';
 
 interface ProductItem {
 	id: number;
@@ -18,30 +13,29 @@ const arrayDate: ProductItem[] = [
 		id: 1,
 		title: 'Профильные системы для окон',
 		link: '/products/profile_systems_for_windows',
-		img: product1,
+		img: '/assets/image/product1.webp',
 	}, {
 		id: 2,
 		title: 'Профильные системы для дверей',
 		link: '/products/profile_systems_for_doors',
-		img: product2,
+		img: '/assets/image/product2.webp',
 	}, {
 		id: 3,
 		title: 'Остекление балконов',
-		link: 'asd',
-		img: product3,
+		link: '/products/balcony_glazing',
+		img: '/assets/image/product3.webp',
 	}, {
 		id: 4,
 		title: 'Фурнитуры',
 		link: '/accessories',
-		img: product4,
+		img: '/assets/image/product4.webp',
 	}
 ]
-
 
 const Products: FC = () => {
 
 	return (<section className={'padding_top_150 ' + st.products} >
-		<div id='ourProduction' className={'_container ' + st.container} >
+		<div id='ourProduction' className={st.container} >
 			<h2 className='text_h2' >Наша продукция</h2>
 			<div className={st.container} >
 				<ul className={st.products_items}>
@@ -52,7 +46,7 @@ const Products: FC = () => {
 							</p>
 							<div className={st.product__body}>
 								<div className={st.product__body_fon}>
-									<img src={el.img} ></img>
+									<img src={el.img} width={520} height={420} alt='product'></img>
 								</div>
 								<div className={st.product__block_button}>
 									<Link to={el.link} className={'button_white ' + st.button} >Подробнее</Link>

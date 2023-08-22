@@ -1,7 +1,4 @@
 import st from './statistics.module.scss'
-import img_1 from './img/statistics_1.svg'
-import img_2 from './img/statistics_2.svg'
-import img_3 from './img/statistics_3.svg'
 
 interface InterfaceDate {
 	img: any;
@@ -10,15 +7,15 @@ interface InterfaceDate {
 }
 const ArrayDate: InterfaceDate[] = [
 	{
-		img: img_1,
+		img: '/assets/image/statistics_1.svg',
 		quantity: 'Прочность и надёжность',
 		title: 'Использование специальных армирующих усилителей обеспечивает высокую стабильность конструкции'
 	}, {
-		img: img_2,
+		img: '/assets/image/statistics_2.svg',
 		quantity: 'Защита от шума',
 		title: 'Высокая шумоизоляция обеспечивает тишину и спокойствие Вашего дома'
 	}, {
-		img: img_3,
+		img: '/assets/image/statistics_3.svg',
 		quantity: 'Энерго- эффективность',
 		title: 'Стабильная многокамерная система с превосходными изолирующими характеристикамии'
 	}

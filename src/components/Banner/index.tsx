@@ -2,17 +2,11 @@ import st from './banner.module.scss';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import OtherBanner from '../OtherBanner';
-import fotoBanner from './img/other_banner.jpg';
 import { IBanner } from '../../models/IBanner';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-const bannerDate: IBanner = {
-	title: 'ПРОСТОЕ ОКНО',
-	text: 'Если вам необходимо недорогое,	но качественное решение для остекления.',
-	image: fotoBanner,
-	link: 'Бесплатный замер'
-}
+
 interface Props {
 	banner: IBanner
 }

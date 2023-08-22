@@ -1,0 +1,80 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
+@import '../../../styles/media';
+
+.container {
+	max-width: 912px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 24px;
+	padding-top: 80px;
+	box-sizing: border-box;
+}
+
+
+.body {
+	padding: 40px 10px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 27px;
+	background-color: $colorBlockLightBlue;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.block_title {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 25px;
+	text-align: center;
+	max-width: 650px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.block__button {
+	display: flex;
+	justify-content: center
+}
+
+.title {
+	@include fontRoboto600Semi-Bold(24px, 120%);
+}
+
+@include breakpoint-medium {
+	.container {
+		padding-top: 60px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.block_title {
+		// max-width: 414px;
+	}
+
+	.body {
+		grid-gap: 16px;
+		padding: 40px 70px;
+	}
+
+	.block_title {
+		grid-gap: 16px;
+	}
+}
+
+@include breakpoint-small {
+	.container {
+		padding-top: 40px;
+	}
+
+	.title {
+		font-size: 14px;
+	}
+
+	.body {
+		padding: 16px 12.5px;
+	}
+
+}
