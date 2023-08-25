@@ -26,69 +26,55 @@ const ComponentModalNew = ({ active, setActive, dataModal }: Props) => {
 	return (<>
 		<div
 			className={active ? st.wrapper + ' ' + st.active : st.wrapper}>
-			<div className={st.modal} >
-				<div className={st.modal_body}>
-					<div className={st.close} onClick={(event) => {
-						event.stopPropagation()
-						event.preventDefault()
-						setActive(false)
-					}}>
-						<img className={st.closeBtn} src={close_img} width={27.5} height={27.5} ></img>
-					</div>
-					<div className={st.content}>
-						<div className={st.modal_swiper}>
-							{/* <Swiper
-								className={st.swiper}
-								modules={[Navigation, Pagination, Scrollbar, A11y]}
-								spaceBetween={50}
-								slidesPerView={1}
-								navigation
-								pagination={{
-									clickableClass: `${st.vertical_Class}`,
-									enabled: true,
-									clickable: true,
-									bulletClass: `${st.bullet}`,
-									bulletActiveClass: `${st.bulletActive}`,
-								}}
-								scrollbar={{ draggable: true }}>
-								{dataModal.map((el) =>
-									<SwiperSlide>
-										<div className={st.sl__wrapper} >
-											<div className={st.body} >
-												<div className={st.sl__img} >
-													<img
-														width={380}
-														height={500}
-														src={el.image}
-													></img>
-												</div>
-												<div className={st.block_text} >
-													<TitleSection textAlign='center' children={el.title} />
-													<p className={st.text} >
-														{el.text}
-													</p>
+			<div className={st.block__center} >
+				<div className={st.modal} >
+					<div className={st.modal_body}>
+						<div className={st.close} onClick={(event) => {
+							event.stopPropagation()
+							event.preventDefault()
+							setActive(false)
+						}}>
+							<img className={st.closeBtn} src={close_img} width={27.5} height={27.5} ></img>
+						</div>
+						<div className={st.content}>
+							<div className={st.modal_swiper}>
+								<Swiper
+									className={st.swiper}
+									modules={[Navigation, Pagination, Scrollbar, A11y]}
+									spaceBetween={50}
+									slidesPerView={1}
+									navigation
+									pagination={{
+										clickableClass: `${st.vertical_Class}`,
+										enabled: true,
+										clickable: true,
+										bulletClass: `${st.bullet}`,
+										bulletActiveClass: `${st.bulletActive}`,
+									}}
+									scrollbar={{ draggable: true }}>
+									{dataModal.map((el) =>
+										<SwiperSlide>
+											<div className={st.sl__wrapper} >
+												<div className={st.body} >
+													<div className={st.sl__img} >
+														<img
+															width={380}
+															height={500}
+															src={el.image}
+															alt='news'
+														/>
+													</div>
+													<div className={st.block_text} >
+														<TitleSection textAlign='center' children={el.title} />
+														<p className={st.text} >
+															{el.text}
+														</p>
+													</div>
 												</div>
 											</div>
-										</div>
-									</SwiperSlide>
-								)}
-							</Swiper> */}
-							<div className={st.sl__wrapper} >
-								<div className={st.body} >
-									<div className={st.sl__img} >
-										<img
-											width={380}
-											height={500}
-											src={dataModal[0].image}
-										></img>
-									</div>
-									<div className={st.block_text} >
-										<TitleSection textAlign='center' children={dataModal[0].title} />
-										<p className={st.text} >
-											{dataModal[0].text}
-										</p>
-									</div>
-								</div>
+										</SwiperSlide>
+									)}
+								</Swiper>
 							</div>
 						</div>
 					</div>
@@ -98,7 +84,7 @@ const ComponentModalNew = ({ active, setActive, dataModal }: Props) => {
 				event.stopPropagation()
 				event.preventDefault()
 				setActive(false)
-			}}></div>
+			}}>d</div>
 		</div>
 	</>)
 }

@@ -1,4 +1,5 @@
 import st from './brands.module.scss'
+import { motion } from 'framer-motion'
 
 import BrandItem from './BrandItem'
 interface BrandsInterface {
@@ -118,16 +119,35 @@ const brandsDate: BrandsInterface[] = [
 ]
 
 const Brands: React.FC = () => {
-
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (
 		<section id='brands_id' className={'padding_top_150 ' + st.brands}>
 			<div className={st.container} >
 				<h2 className='text_h2' >Наши бренды</h2>
 				<ul className={st.brands__grid} >
 					{brandsDate.map((element, index) =>
-						<li className={st.brand__wrapper + ' ' + st.brand__ + index + 1} >
+						<motion.li
+							initial="hidden"
+							whileInView="animate"
+							custom={index}
+							variants={imgVariants}
+							className={st.brand__wrapper + ' ' + st.brand__ + index + 1} >
 							<BrandItem branItem={element} index={index} />
-						</li>
+						</motion.li>
 					)}
 				</ul>
 			</div>

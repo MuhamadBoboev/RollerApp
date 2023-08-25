@@ -1,10 +1,34 @@
 import st from './AboutСompany.module.scss'
 import Button from '../../../../components/ui/Button'
+import { motion } from 'framer-motion'
+
 import { NavLink } from 'react-router-dom'
 
 const AboutСompany = () => {
 	return (
-		<section className={st.aboutСompany} >
+		<motion.section
+			initial={{
+				opacity: 0,
+				y: 40,
+			}}
+			exit={{
+				opacity: 0,
+				y: 40,
+			}}
+			transition={{
+				duration: .5
+			}}
+			viewport={{
+				amount: 'some',
+				margin: '0px 0px -140px 0px',
+				once: false,
+			}}
+			whileInView={{
+				opacity: 1,
+				y: 0,
+			}}
+			className={st.aboutСompany}
+		>
 			<div className={'_container ' + st.container}>
 				<div className={st.aboutСompany__wrapper}>
 					<div className={st.aboutСompany__bl_text}>
@@ -22,11 +46,10 @@ const AboutСompany = () => {
 								этой цели мы сотрудничаем с передовыми европейскими
 								и турецкими компаниями как «Krauss Mafei», Renolit, «Mikrosan», «Akdeniz» и у нас трудятся высококвалифицированные кадры.
 							</p>
-							{/* <button className={'button ' + st.button} >Узнать больше</button> */}
 							<div>
-								<NavLink to='/aboutCompany'>
-									<Button children='Ухнать больше' />
-								</NavLink>
+								<div className='/aboutCompany'>
+									<Button children='Узнать больше' />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -37,7 +60,7 @@ const AboutСompany = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 export default AboutСompany

@@ -5,6 +5,7 @@ import advantage_2 from './img/advantage_2.svg'
 import advantage_3 from './img/advantage_3.svg'
 import advantage_4 from './img/advantage_4.svg'
 import advantage_5 from './img/advantage_5.svg'
+import { motion } from 'framer-motion'
 
 interface AdvantageInterface {
 	img: any;
@@ -34,6 +35,21 @@ const advantageDate: AdvantageInterface[] = [
 		link: 'aboutCompany'
 	}
 ]
+const imgVariants = {
+	hidden: {
+		opacity: 0,
+		x: 20,
+		scale: 0.5
+	},
+	animate: (i: number) => ({
+		opacity: 1,
+		scale: 1,
+		x: 0,
+		transition: {
+			delay: (i + 1) * 0.1,
+		}
+	})
+}
 
 const Advantage = () => {
 	return (<div className={st.advantage} >
@@ -41,9 +57,14 @@ const Advantage = () => {
 			Преимущества
 		</h2>
 		<ul className={st.advantage_wrapper} >
-			{advantageDate.map((el) =>
+			{advantageDate.map((el, index) =>
 				<li className={st.advantage__item} >
-					<div className={st.advantage__item_body} >
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						custom={index}
+						variants={imgVariants}
+						className={st.advantage__item_body} >
 						<div className={st.advantage__item__top} >
 							<div className={st.advantage__bl_img} >
 								<img src={el.img} ></img>
@@ -57,7 +78,7 @@ const Advantage = () => {
 						<div className={st.advantage__bl_link} >
 							<Link to={el.link} className={st.advantage__link} >Подробнее</Link>
 						</div>
-					</div>
+					</motion.div>
 				</li>
 			)}
 		</ul>

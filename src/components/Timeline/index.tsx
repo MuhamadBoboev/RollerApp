@@ -5,6 +5,7 @@ import { Text } from '../ui/Text'
 import { TitleSection } from '../ui/TitleSection'
 import st from './timeline.module.scss'
 import './img/briefcase_1.svg'
+import { motion } from 'framer-motion'
 
 interface Props {
 	items: ITimeline[]
@@ -13,7 +14,23 @@ interface Props {
 	imgDisplay?: boolean
 }
 
+
 const Timeline = ({ items, subtitleMain, titleMain, imgDisplay = false }: Props) => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<>
 		<div className={'_container ' + st.timeline} >
 			<div className={st.bl__title} >
@@ -27,8 +44,13 @@ const Timeline = ({ items, subtitleMain, titleMain, imgDisplay = false }: Props)
 				/>
 			</div>
 			<ul className={st.items}>
-				{items.map((el) =>
-					<li className={st.item} key={el.key}>
+				{items.map((el, index) =>
+					<motion.li
+						initial="hidden"
+						whileInView="animate"
+						custom={index}
+						variants={imgVariants}
+						className={st.item} key={el.key}>
 						<div className={st.body} >
 							<div className={st.text_body}>
 								<div className={st.title__block} >
@@ -51,7 +73,7 @@ const Timeline = ({ items, subtitleMain, titleMain, imgDisplay = false }: Props)
 								width={170}
 								height={170} ></img>
 						</div>
-					</li>
+					</motion.li>
 				)}
 			</ul>
 		</div>

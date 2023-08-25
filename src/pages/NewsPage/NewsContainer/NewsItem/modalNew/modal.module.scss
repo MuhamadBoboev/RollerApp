@@ -6,6 +6,9 @@
 	display: none;
 	z-index: 10;
 	overflow: auto;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 .vertical_Class {
@@ -25,12 +28,7 @@
 	width: 100%;
 	height: 100%;
 	transition: all 0.5s ease-out;
-	z-index: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	z-index: 10;
-
 }
 
 .modal__fon {
@@ -43,6 +41,15 @@
 	opacity: 0.5;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.block__center {
+	width: 100%;
+	height: 100%;
+	padding-top: 40px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
 }
 
 .modal {
@@ -60,6 +67,7 @@
 	overflow: hidden;
 	background-color: $colorWhite;
 	margin-bottom: 10px;
+
 }
 
 .modal_body {
@@ -91,9 +99,11 @@
 }
 
 .sl__wrapper {
-	background-color: rgba(165, 165, 165, 0.9);
-
+	padding: 0 90px;
+	// background-color: rgba(165, 165, 165, 0.9);
 }
+
+.body {}
 
 .vertical_Class {
 	display: flex;
@@ -138,6 +148,10 @@
 	}
 }
 
+.text {
+	height: 300px;
+	overflow: auto;
+}
 
 .block_text {
 	display: flex;
@@ -153,7 +167,7 @@
 
 
 .modal {
-	max-width: 912px;
+	max-width: 1192px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 24px;
@@ -167,7 +181,6 @@
 	flex-direction: column;
 	grid-gap: 40px;
 	padding: 0px;
-	padding-top: 40px;
 
 }
 
@@ -204,10 +217,13 @@
 		top: 24px;
 		right: 24px;
 	}
-
 }
 
 @include breakpoint-medium {
+	.sl__wrapper {
+		padding: 0;
+	}
+
 	.modal {
 		max-width: 100%;
 		z-index: 9;
@@ -215,8 +231,8 @@
 
 	.close {
 		position: absolute;
-		top: 24px;
-		right: 24px;
+		top: -20px;
+		right: 10px;
 	}
 
 	.text {
@@ -241,6 +257,7 @@
 	.body {
 		display: flex;
 		flex-direction: column;
+		grid-gap: 0px;
 	}
 
 	.text {

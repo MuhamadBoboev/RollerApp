@@ -17,6 +17,20 @@
 	z-index: -1;
 }
 
+.view {
+	.title {
+		animation: animateTitle 500ms;
+		animation-fill-mode: forwards;
+		animation-delay: 400ms;
+	}
+
+	.texting {
+		animation: animateTitle 400ms;
+		animation-fill-mode: forwards;
+		animation-delay: 500ms;
+	}
+}
+
 .banner__img {
 	width: 100%;
 	height: 100%;
@@ -49,6 +63,8 @@
 	text-align: center;
 	@include fontRoboto600Semi-Bold(48px, 100%);
 	color: $colorWhite;
+	opacity: 0;
+	transform: translateY(40px);
 }
 
 .texting {
@@ -56,6 +72,8 @@
 	color: $colorWhite;
 	line-height: 150%;
 	text-align: center;
+	opacity: 0;
+	transform: translateY(40px);
 }
 
 @include breakpoint-medium {
@@ -94,5 +112,17 @@
 
 	.texting {
 		font-size: 12px;
+	}
+}
+
+@keyframes animateTitle {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
 	}
 }

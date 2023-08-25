@@ -1,11 +1,32 @@
 import { Link } from 'react-router-dom'
 import st from './choice.module.scss'
+import { motion } from 'framer-motion'
 
+const imgVariants = {
+	hidden: {
+		opacity: 0,
+		x: 20,
+		scale: 0.5
+	},
+	animate: (i: number) => ({
+		opacity: 1,
+		scale: 1,
+		x: 0,
+		transition: {
+			delay: (i + 1) * 0.1,
+		}
+	})
+}
 const Choice = () => {
 	return (<div className={st.choice} >
 		<div className={' ' + st.container} >
 			<div className={st.choice__wrapper}>
-				<div className={st.choice__body}>
+				<motion.div className={st.choice__body}
+					initial="hidden"
+					whileInView="animate"
+					variants={imgVariants}
+				>
+
 					<h3 className={st.choice__title}>
 						ЗАТРУДНЯЕТЕСЬ С ВЫБОРОМ?
 					</h3>
@@ -21,7 +42,7 @@ const Choice = () => {
 							Заказать замер
 						</Link>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</div>
 	</div>)

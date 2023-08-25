@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { Text } from '../ui/Text';
 import { TitleSection } from '../ui/TitleSection';
 import st from './block_items.module.scss'
+import { motion } from 'framer-motion'
 
 interface Props {
 	title: string
@@ -16,7 +17,21 @@ interface ItemProps {
 }
 
 const BlockItems = ({ title, textBottom, paddingTop150, props }: Props) => {
-
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<>
 		<div className={clsx(
 			st.container,
@@ -25,8 +40,13 @@ const BlockItems = ({ title, textBottom, paddingTop150, props }: Props) => {
 			<div className={st.wrapper} >
 				<TitleSection textAlign='center' children={title} />
 				<div className={st.items} >
-					{props.map((el) =>
-						<div className={st.item} >
+					{props.map((el, index) =>
+						<motion.div
+							initial="hidden"
+							whileInView="animate"
+							custom={index}
+							variants={imgVariants}
+							className={st.item} >
 							<div className={st.item__body}>
 								<div className={st.item__top}>
 									<div className={st.item__img_bl} >
@@ -36,7 +56,7 @@ const BlockItems = ({ title, textBottom, paddingTop150, props }: Props) => {
 								</div>
 								<Text children={el.text} />
 							</div>
-						</div>)}
+						</motion.div>)}
 				</div>
 			</div>
 			<div className={clsx(

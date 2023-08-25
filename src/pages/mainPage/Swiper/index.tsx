@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import st from './swiper.module.scss'
+import { motion } from 'framer-motion'
 import 'swiper/scss';
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
@@ -10,31 +11,48 @@ interface SwiperInterfaceDate {
 	subtitle: string;
 	title: string;
 	text: string;
+	image: string;
 }
 export const dateForSwiper: SwiperInterfaceDate[] = [
 	{
 		subtitle: 'Наши работы',
-		title: 'наименовние проекта',
-		text: 'Основная цель нашей компании является производство качественной продукции с гарантией. Для достижения этой цели мы сотрудничаем с передовыми европейскими и турецкими компаниями как «Krauss Mafei», Renolit, «Mikrosan», «Akdeniz» и у нас трудятся высококвалифицированные кадры.'
+		title: 'Жилой комплекс Рассвет',
+		text: 'Жилой комплекс Рассвет состоит из четырех блоков, каждый из которых имеет шесть этажей. Строительство было завершено в 2023 году. Одной из особенностей ЖК Рассвет являются оконные системы и подоконники от Unopen. Эти высококачественные оконные конструкции обеспечивают отличную звуко- и теплоизоляцию, а также защиту от нежелательных внешних воздействий. Их антрацитовый цвет придает эксклюзивный и современный вид дому. Комплекс расположен по адресу Фучика 25 (рядом с мясокомбинатом, а также остановкой конечного пункта маршрута 8).',
+		image: '/assets/image/works_3.webp'
 	},
 	{
 		subtitle: 'Наши работы',
-		title: 'наименовние проекта',
-		text: 'Основная цель нашей компании является производство качественной продукции с гарантией. Для достижения этой цели мы сотрудничаем с передовыми европейскими и турецкими компаниями как «Krauss Mafei», Renolit, «Mikrosan», «Akdeniz» и у нас трудятся высококвалифицированные кадры.'
+		title: 'Жилой комплекс борбад',
+		text: 'Жилой комплекс Борбад, состоит из двух блоков, каждый из которых имеет 16 этажей. Строительство было завершено в 2021 году. Местоположение комплекса - Борбад 1/2, рядом с Коммерческим университетом и Армутом. Оконные системы Unopen обеспечивают надежную защиту от шума и сохраняют тепло внутри квартиры. А подоконники от Unopen, выполненные в прекрасном золотистом дубовом цвете, добавят неповторимый шарм интерьеру.',
+		image: '/assets/image/works_2.webp'
 	},
-	{
-		subtitle: 'Наши работы',
-		title: 'наименовние проекта',
-		text: 'Основная цель нашей компании является производство качественной продукции с гарантией. Для достижения этой цели мы сотрудничаем с передовыми европейскими и турецкими компаниями как «Krauss Mafei», Renolit, «Mikrosan», «Akdeniz» и у нас трудятся высококвалифицированные кадры.'
-	}
 
 ]
 const SwiperComponent = () => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (
 		<div className={st.swiper__wrapper} >
 			<div className={st.swiper__section} >
-				<div className={'_container ' + st.container}>
-					<div className={st.swiper__main} >
+				<div className={st.container}>
+					<motion.div className={st.swiper__main}
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+					>
 						<Swiper
 							className={st.swiper}
 							modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -64,7 +82,7 @@ const SwiperComponent = () => {
 										</p>
 									</div>
 									<div className={st.sl__img} >
-										<img src='/assets/image/works_1.webp'
+										<img src={el.image}
 											width={630}
 											height={433}
 											alt='sad'
@@ -73,7 +91,7 @@ const SwiperComponent = () => {
 								</div>
 							</SwiperSlide>)}
 						</Swiper>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</div>

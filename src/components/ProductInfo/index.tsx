@@ -5,6 +5,7 @@ import { Text } from '../ui/Text'
 import { TitleSection } from '../ui/TitleSection'
 import st from './product_info.module.scss'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 interface Props {
 	props: dateProps
@@ -18,13 +19,32 @@ interface dateProps {
 	link: string
 }
 const ProductInfo = ({ props, imgSideLeft }: Props) => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<>
 		<section className={st.info} >
 			<div className={'_container ' + st.container}>
-				<div className={clsx(
-					st.info__wrapper,
-					imgSideLeft ? st.info__image_left : '',
-				)}>
+				<motion.div
+					initial="hidden"
+					whileInView="animate"
+					variants={imgVariants}
+					className={clsx(
+						st.info__wrapper,
+						imgSideLeft ? st.info__image_left : '',
+					)}>
 					<div className={clsx(
 						st.info__image,
 					)} >
@@ -45,7 +65,7 @@ const ProductInfo = ({ props, imgSideLeft }: Props) => {
 							</div>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	</>)

@@ -1,4 +1,7 @@
+import { useRef } from 'react'
 import st from './bannerCompany.module.scss'
+import { useInView } from 'framer-motion';
+import clsx from 'clsx';
 
 interface Props {
 	banner: bannerDate
@@ -10,8 +13,14 @@ interface bannerDate {
 }
 
 const BannerCompany = ({ banner }: Props) => {
+	const ref = useRef(null)
+	const isView = useInView(ref, {
+		once: false,
+		amount: 'some',
+	})
+
 	return (<>
-		<section className={st.banner} >
+		<section className={clsx(st.banner, isView && st.view)} ref={ref}>
 			<div className={st.banner__wrapper} >
 				<div className={'_container ' + st.container} >
 					<div className={st.banner__body} >

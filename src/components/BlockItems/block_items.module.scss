@@ -123,6 +123,11 @@
 }
 
 @include breakpoint-small {
+	.container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
 	.padding_150 {
 		padding-top: 40px;
 	}

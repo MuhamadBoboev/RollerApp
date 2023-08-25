@@ -4,6 +4,9 @@
 
 .container {
 	width: 100%;
+	padding: 0 24px;
+	max-width: 912px;
+	margin: 0 auto;
 	padding-top: 150px;
 	box-sizing: border-box;
 }
@@ -94,6 +97,10 @@
 }
 
 @include breakpoint-medium {
+	.container {
+		padding-top: 80px;
+	}
+
 	.title_block {
 		h2 {
 			text-align: start;
@@ -141,6 +148,15 @@
 }
 
 @include breakpoint-small {
+	.container {
+		padding: 0 16px;
+		padding-top: 40px;
+	}
+
+	.wrapper {
+		grid-gap: 16px;
+	}
+
 	.wrapper__bottom {
 		display: flex;
 		justify-content: end;
@@ -148,6 +164,13 @@
 
 	.link_block {
 		display: none;
+	}
+
+	.title_block {
+
+		h2 {
+			text-align: center;
+		}
 	}
 
 	.link_block__mobile {

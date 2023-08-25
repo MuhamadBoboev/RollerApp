@@ -2,7 +2,8 @@
 @import 'src/styles/media';
 @import 'src/styles/colors';
 
-.swiper-button-next, .swiper-button-prev  {
+.swiper-button-next,
+.swiper-button-prev {
 	background-color: $colorRed;
 	width: 64px;
 	height: 64px;
@@ -11,15 +12,20 @@
 	align-items: center;
 	border-radius: 50%;
 }
+
 .swiper-button-next {
 	right: 100px;
 }
-.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
 	background-color: #B4B3B0;
 }
-.swiper-button-prev:after, .swiper-button-next:after {	
-	font-size: 23px ;
-	color: white;
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+	font-size: 23px;
+	color: $colorWhite;
 }
 
 @include breakpoint-large {
@@ -27,18 +33,24 @@
 		position: sticky;
 		justify-content: center;
 	}
+
 	.swiper-button-next {
 		right: 24px;
 	}
+
 	.swiper-button-prev {
 		left: 24px;
 	}
-	.swiper-button-next, .swiper-button-prev  {
+
+	.swiper-button-next,
+	.swiper-button-prev {
 		width: 40px;
 		height: 40px;
 		top: 70%;
 	}
-	.swiper-button-prev:after, .swiper-button-next:after {	
+
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
 		font-size: 16px;
 	}
 }
@@ -47,15 +59,20 @@
 	.swiper-button-next {
 		right: 16px;
 	}
+
 	.swiper-button-prev {
 		left: 16px;
 	}
-	.swiper-button-next, .swiper-button-prev  {
+
+	.swiper-button-next,
+	.swiper-button-prev {
 		width: 32px;
 		height: 32px;
 		top: 73%;
 	}
-	.swiper-button-prev:after, .swiper-button-next:after {	
+
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
 		font-size: 13px;
 	}
 }

@@ -1,7 +1,6 @@
 import { INewsItems } from "../../../../models/INewsItems"
 import st from './news_item.module.scss'
 import { Text } from "../../../../components/ui/Text"
-import ComponentModal from "./modal"
 import { useState } from "react"
 import ComponentModalNew from "./modalNew"
 

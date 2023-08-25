@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { IBlockInfo } from '../../models/IBlockInfo'
 import { Subtitle } from '../ui/Subtitle'
 import { TitleSection } from '../ui/TitleSection'
+import { motion } from 'framer-motion'
 
 interface Props {
 	props: IBlockInfo
@@ -11,13 +12,32 @@ interface Props {
 }
 
 const BlockInfo = ({ props, variant }: Props) => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (
 		<section className={st.block_info} >
 			<div className={'_container ' + st.container}>
 				<div className={clsx(
 					st.block_info__wrapper,
 					st[`variant_${variant}`])}>
-					<div className={st.block_info__bl_text}>
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+						className={st.block_info__bl_text}>
 						<div className={st.block_info__body}>
 							<div className={st.block_info__title}>
 								<div className={clsx(
@@ -37,12 +57,16 @@ const BlockInfo = ({ props, variant }: Props) => {
 								</p>
 							</div>
 						</div>
-					</div>
-					<div className={st.block_info__left} >
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+						className={st.block_info__left} >
 						<div className={st.block_info__bl_img}>
 							<img src={`${props.image}`} width={368} height={436}></img>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

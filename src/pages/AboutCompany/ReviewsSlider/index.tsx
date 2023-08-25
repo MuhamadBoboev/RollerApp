@@ -4,13 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-// import infoSvg from './slider_info.svg'
 import { Subtitle } from '../../../components/ui/Subtitle';
 import { TitleSection } from '../../../components/ui/TitleSection';
 import { Text } from '../../../components/ui/Text';
-// import foto_people from './profile_foto.jpg'
-// import { DateReviews } from './DateReviews';
 import { IReviewsSlider } from '../../../models/IReviewsSlider';
+import { motion } from 'framer-motion'
 
 interface Props {
 	title: string
@@ -18,6 +16,21 @@ interface Props {
 	items: IReviewsSlider[]
 }
 const ReviewsSlider = ({ title, subtitle, items }: Props) => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<>
 		<div className={st.reviews} >
 			<div className={'_container ' + st.container} >
@@ -58,9 +71,14 @@ const ReviewsSlider = ({ title, subtitle, items }: Props) => {
 							}
 						}}
 					>
-						{items.map((el) =>
+						{items.map((el, index) =>
 							<SwiperSlide>
-								<div className={st.slider__body}>
+								<motion.div
+									initial="hidden"
+									whileInView="animate"
+									custom={index}
+									variants={imgVariants}
+									className={st.slider__body}>
 									<div className={st.slide_top}>
 										<div className={st.slider__svg}>
 											<img src={'/assets/image/slider_info.svg'} width={40} height={40} ></img>
@@ -82,7 +100,7 @@ const ReviewsSlider = ({ title, subtitle, items }: Props) => {
 											<Text children={`${el.job}`} />
 										</div>
 									</div>
-								</div>
+								</motion.div>
 							</SwiperSlide>
 						)}
 					</Swiper>

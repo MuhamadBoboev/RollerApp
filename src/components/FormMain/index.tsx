@@ -3,6 +3,7 @@ import { TitleSection } from '../ui/TitleSection';
 import st from './form_main.module.scss'
 import { useForm, SubmitHandler } from "react-hook-form";
 import clsx from 'clsx';
+import { motion } from 'framer-motion'
 
 interface IFormInput {
 	firstName: String;
@@ -15,12 +16,30 @@ interface IFormInput {
 const FormMain = ({ titleChildren, textChildren }: FormMainProps) => {
 	const { register, handleSubmit } = useForm<IFormInput>();
 	const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
-
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (
 		<div className={'_container ' + st.container}>
-			<div className={clsx(
-				st.form
-			)}>
+			<motion.div
+				initial="hidden"
+				whileInView="animate"
+				variants={imgVariants}
+				className={clsx(
+					st.form
+				)}>
 				<div className={st.form_top} >
 					<TitleSection textAlign='center' children={titleChildren} />
 					<Text textAlign='center' children={textChildren} />
@@ -50,7 +69,7 @@ const FormMain = ({ titleChildren, textChildren }: FormMainProps) => {
 						</div>
 					</div>
 				</form>
-			</div>
+			</motion.div>
 		</div>
 	)
 }

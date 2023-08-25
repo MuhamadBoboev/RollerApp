@@ -4,6 +4,8 @@ import contactLogo_1 from './img/contactLogo_1.svg'
 import contactLogo_2 from './img/contactLogo_2.svg'
 import contactLogo_3 from './img/contactLogo_3.svg'
 import contactLogo_4 from './img/contactLogo_4.svg'
+import { motion } from 'framer-motion'
+
 
 import socialLogo_1 from './img/socialLogo_1.svg'
 import socialLogo_2 from './img/socialLogo_2.svg'
@@ -38,6 +40,21 @@ const contactsDate: contactsInterface[] = [
 ]
 
 const Contacts = () => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (
 		<div className={st.contacts}>
 			<h2 className={'text_h2 ' + st.contacts__title} >
@@ -51,12 +68,20 @@ const Contacts = () => {
 				</p>
 			</div>
 			<div className={st.contacts__wrapper} >
-				<div className={st.contacts__left}>
+				<motion.div
+					initial="hidden"
+					whileInView="animate"
+					variants={imgVariants}
+					className={st.contacts__left}>
 					<div className={st.contacts__map} >
 						<Map />
 					</div>
-				</div>
-				<div className={st.contacts__right} >
+				</motion.div>
+				<motion.div
+					initial="hidden"
+					whileInView="animate"
+					variants={imgVariants}
+					className={st.contacts__right} >
 					<ul className={st.contacts__block} >
 						{contactsDate.map((el) =>
 							<li className={st.contacts__list} >
@@ -103,7 +128,7 @@ const Contacts = () => {
 							</li>
 						</ul>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</div>)
 }

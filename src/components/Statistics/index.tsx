@@ -1,4 +1,5 @@
 import st from './statistics.module.scss'
+import { motion } from 'framer-motion'
 
 interface InterfaceDate {
 	img: any;
@@ -22,11 +23,31 @@ const ArrayDate: InterfaceDate[] = [
 ]
 
 const Statistics = () => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<div className={st.statistics_section}>
 		<div className={'_container ' + st.statistics} >
 			<ul className={st.statistics__wrapper}>
-				{ArrayDate.map((el) => <li className={st.statistics__item} >
-					<div className={st.statistics__item_body}>
+				{ArrayDate.map((el, index) => <li className={st.statistics__item} >
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						custom={index}
+						variants={imgVariants}
+						className={st.statistics__item_body}>
 						<div className={st.statistics__img} >
 							<img src={el.img} ></img>
 						</div>
@@ -38,7 +59,7 @@ const Statistics = () => {
 								{el.title}
 							</p>
 						</div>
-					</div>
+					</motion.div>
 				</li>)}
 			</ul>
 		</div>

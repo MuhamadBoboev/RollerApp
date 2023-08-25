@@ -12,6 +12,7 @@ interface Props {
 }
 
 const Banner = ({ banner }: Props) => {
+
 	return (
 		<div >
 			<div className={st.banner}>

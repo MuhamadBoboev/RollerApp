@@ -1,4 +1,6 @@
 import st from './bannerCompany.module.scss'
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 interface Props {
 	banner: bannerDate
@@ -10,6 +12,11 @@ interface bannerDate {
 }
 
 const BannerCompany = ({ banner }: Props) => {
+	const ref = useRef(null)
+	const isView = useInView(ref, {
+		once: false,
+		amount: 'some',
+	})
 	return (<>
 		<section className={st.banner} >
 			<div className={st.banner__wrapper} >

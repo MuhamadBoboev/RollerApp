@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import Button from '../ui/Button'
 import st from './other_banner.module.scss'
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import clsx from 'clsx';
 
 interface Props {
 	banner: bannerDate
@@ -12,8 +15,13 @@ interface bannerDate {
 	link?: string
 }
 const OtherBanner = ({ banner }: Props) => {
+	const ref = useRef(null)
+	const isView = useInView(ref, {
+		once: false,
+		amount: 'some',
+	})
 	return (<>
-		<section className={st.banner} >
+		<section className={clsx(st.banner, isView && st.view)} ref={ref} >
 			<div className={st.banner__wrapper} >
 				<div className={'_container ' + st.container} >
 					<div className={st.banner__body} >

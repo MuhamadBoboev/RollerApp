@@ -1,4 +1,5 @@
 import st from './partners.module.scss'
+import { motion } from 'framer-motion'
 
 import PartnerItem from './PartnerItem'
 interface PartnersInterface {
@@ -143,6 +144,21 @@ const PartnersDate: PartnersInterface[] = [
 
 
 const Partners = () => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 
 	return (
 		<section className={'padding_top_150 ' + st.partners}>
@@ -160,12 +176,17 @@ const Partners = () => {
 					</div>
 				</div>
 				<ul className={st.partners__items} >
-					{PartnersDate.map((el) =>
-						<li
+					{PartnersDate.map((el, index) =>
+						<motion.li
+							initial="hidden"
+							whileInView="animate"
+							custom={index}
+							variants={imgVariants}
 							className={st.partner__item}
+
 						>
 							<PartnerItem partnerItem={el} />
-						</li>
+						</motion.li>
 					)}
 				</ul>
 			</div>

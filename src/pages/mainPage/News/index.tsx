@@ -1,5 +1,5 @@
 import st from './news.module.scss'
-
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom';
 
 interface NewsInterface {
@@ -33,6 +33,21 @@ const newsDate: NewsInterface[] = [
 ]
 
 const News = () => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<section className={'padding_top_150 ' + st.news} >
 		<div className={'_container ' + st.container} >
 			<div className={st.news__header}>
@@ -45,8 +60,13 @@ const News = () => {
 				</div>
 			</div>
 			<ul className={st.news__items}>
-				{newsDate.map((el) =>
-					<li className={st.news__wrapper} >
+				{newsDate.map((el, index) =>
+					<motion.li
+						initial="hidden"
+						whileInView="animate"
+						custom={index}
+						variants={imgVariants}
+						className={st.news__wrapper} >
 						<div className={st.news__img_block} >
 							<div className={st.news__img_body}>
 								<img src={el.img} width={275} height={250} alt='news'></img>
@@ -68,7 +88,7 @@ const News = () => {
 								Перейти
 							</Link>
 						</div>
-					</li>
+					</motion.li>
 				)}
 			</ul>
 		</div>

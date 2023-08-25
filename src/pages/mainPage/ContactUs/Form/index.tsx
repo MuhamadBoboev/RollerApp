@@ -1,5 +1,6 @@
 import st from './form.module.scss'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { motion } from 'framer-motion'
 
 enum GenderEnum {
 	female = "Выберите отдел",
@@ -19,10 +20,28 @@ interface IFormInput {
 const Form = () => {
 	const { register, handleSubmit } = useForm<IFormInput>();
 	const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
-
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<div className={st.form}>
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className={st.form__wrapper} >
+			<motion.div
+				initial="hidden"
+				whileInView="animate"
+				variants={imgVariants}
+				className={st.form__wrapper} >
 				<div className={st.form__body} >
 					<ul className={st.form__items} >
 						<li className={st.form__item} >
@@ -49,7 +68,7 @@ const Form = () => {
 						<input className={'button ' + st.form__button} type="submit" />
 					</div>
 				</div>
-			</div>
+			</motion.div>
 			{/* <label>First Name</label>
       <input {...register("firstName")} />
       <label>Gender Selection</label> */}

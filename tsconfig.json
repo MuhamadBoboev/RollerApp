@@ -30,9 +30,6 @@
 		"@shared/*": ["./src/shared/*"],
 		"@widgets/*": ["./src/widgets/*"],
 	},
-  // "include": [
-  //   "src"
-  // ]
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/models/IBlockInfoFittings.ts"],
   "exclude": ["node_modules"]
 }

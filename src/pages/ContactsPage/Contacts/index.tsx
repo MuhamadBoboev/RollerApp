@@ -1,9 +1,25 @@
 import { Text } from '../../../components/ui/Text'
 import { TitleSection } from '../../../components/ui/TitleSection'
 import st from './contacts.module.scss'
+import { motion } from 'framer-motion'
 
 import MapMain from '../../../components/Map'
 const Contacts = () => {
+	const imgVariants = {
+		hidden: {
+			opacity: 0,
+			x: 20,
+			scale: 0.5
+		},
+		animate: (i: number) => ({
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			transition: {
+				delay: (i + 1) * 0.1,
+			}
+		})
+	}
 	return (<>
 		<div className={'_container ' + st.container} >
 			<div className={st.contacts} >
@@ -14,7 +30,11 @@ const Contacts = () => {
 					</div>
 				</div>
 				<div className={st.items} >
-					<div className={st.item + ' ' + st.item_1} >
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+						className={st.item + ' ' + st.item_1} >
 						<div className={st.body} >
 							<div className={st.info} >
 								<div className={st.info__}>
@@ -41,8 +61,12 @@ const Contacts = () => {
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className={st.item + ' ' + st.item_2} >
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+						className={st.item + ' ' + st.item_2} >
 						<div className={st.body} >
 							<div className={st.info} >
 								<p className={st.info__title} >Отдел продаж</p>
@@ -66,8 +90,12 @@ const Contacts = () => {
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className={st.item + ' ' + st.item_3} >
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+						className={st.item + ' ' + st.item_3} >
 						<div className={st.body} >
 							<div className={st.info} >
 								<p className={st.info__title} >Бухгалтерия</p>
@@ -89,7 +117,7 @@ const Contacts = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 					<div className={st.item__map}>
 						<MapMain />
 					</div>
