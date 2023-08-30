@@ -36,7 +36,6 @@ const NewsItem = ({ items }: Props) => {
 					</div>
 				</div>
 			</div>
-			{/* <ComponentModal dataModal={items.ItemNewsDate} active={modalActive} setActive={setModalActive} /> */}
 			<ComponentModalNew dataModal={items.ItemNewsDate} active={modalActive} setActive={setModalActive} />
 		</li>
 	</>

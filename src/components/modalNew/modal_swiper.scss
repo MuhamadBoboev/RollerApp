@@ -1,0 +1,43 @@
+@import 'src/styles/colors';
+@import 'src/styles/media';
+
+.swiper-button-next, .swiper-button-prev  {
+	background-color: $colorBlockLightGrey;
+	width: 64px;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+	background-color: #B4B3B0;
+}
+.swiper-button-prev:after, .swiper-button-next:after {	
+	font-size: 23px ;
+	color: $colorRed;
+}
+@include breakpoint-large {
+	.swiper-button-next {
+		right: 16px;
+	}
+	.swiper-button-prev {
+		left: 16px;
+	}
+	.swiper-button-next, .swiper-button-prev  {
+		width: 32px;
+		height: 32px;
+		// top: 73%;
+	}
+	.swiper-button-prev:after, .swiper-button-next:after {	
+		font-size: 13px;
+	}
+}
+@include breakpoint-medium {
+	.swiper-button-next {
+		right: 7px;
+	}
+	.swiper-button-prev {
+		left: 7px;
+	}
+}

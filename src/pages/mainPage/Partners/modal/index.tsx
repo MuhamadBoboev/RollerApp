@@ -1,15 +1,9 @@
-/* ***** slider ***** */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
-/* ********** */
 import st from './modal.module.scss'
-import { useState } from 'react';
-import close_img from './close_svg.svg'
-// import Swiper from 'swiper';
-import foto from './sert.svg'
 import './modal_swiper.scss'
 import { TitleSection } from '../../../../components/ui/TitleSection';
 
@@ -37,7 +31,8 @@ const ComponentModal = ({ active, setActive, dataModal }: Props) => {
 						event.preventDefault()
 						setActive(false)
 					}}>
-						<img className={st.closeBtn} src={close_img} width={27.5} height={27.5} ></img>
+						<img className={st.closeBtn + ' ' + st.closeBtn_dekstop} src={'./assets/image/close_svg.svg'} width={27.5} height={27.5} ></img>
+						<img className={st.closeBtn + ' ' + st.closeBtn_mobile} src={'./assets/image/close_mobile.svg'} width={20} height={20} ></img>
 					</div>
 					<div className={st.content}>
 						<div className={st.modal_swiper}>

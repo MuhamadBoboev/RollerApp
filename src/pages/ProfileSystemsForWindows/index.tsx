@@ -2,11 +2,7 @@ import OtherBanner from "../../components/OtherBanner"
 import ProductInfo from "../../components/ProductInfo"
 import { IBanner } from "../../models/IBanner"
 import { IProductInfo } from "../../models/IProductInfo"
-import fotoBanner from './img/other_banner.jpg'
-import productsInfoImage_1 from './img/productsInfoImage_1.svg'
-import productsInfoImage_2 from './img/productsInfoImage_2.svg'
-import productsInfoImage_3 from './img/productsInfoImage_3.svg'
-import productsInfoImage_4 from './img/productsInfoImage_4.svg'
+
 const bannerDate: IBanner = {
 	title: 'ПРОФИЛЬНЫЕ СИСТЕМЫ ДЛЯ ОКОН',
 	text: 'У нас вы найдете:	оконные профили,	балконные и лоджийные системы,	профили для межкомнатных дверей и перегородок.	Наши профили обеспечивают идеальную теплоизоляцию и сохранение тепла в любое время года.',
@@ -41,6 +37,7 @@ const dateProductInfo4: IProductInfo = {
 	buttonChildren: 'Перейти',
 	link: '/products/profile_systems_for_windows/window_for_nursery'
 }
+
 const ProfileSystemsForWindows = () => {
 	return (
 		<>

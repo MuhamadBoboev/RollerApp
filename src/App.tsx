@@ -24,7 +24,6 @@ import DoorPage from './pages/DoorPage';
 import BalconyGlazing from './pages/BalconyGlazing';
 import PlasticWindow from './pages/PlasticWindow';
 
-
 function App() {
 	return (
 		<Routes>

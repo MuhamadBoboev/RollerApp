@@ -5,6 +5,7 @@
 .swiper-button-next,
 .swiper-button-prev {
 	background-color: $colorRed;
+	transform: translate(0, -50%);
 	width: 64px;
 	height: 64px;
 	display: flex;

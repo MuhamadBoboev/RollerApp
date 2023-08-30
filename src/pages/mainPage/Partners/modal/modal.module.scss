@@ -11,18 +11,12 @@
 	padding-bottom: 20px;
 }
 
-.modal_body {
-	// border-radius: 20px;
-	// overflow: hidden;
-}
-
 .close {
 	top: 10px;
 	right: 10px;
 }
 
 .wrapper.active {
-	// opacity: 1;
 	position: fixed;
 	display: block;
 	top: 0;
@@ -35,7 +29,6 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
-
 }
 
 .modal__fon {
@@ -44,7 +37,6 @@
 	width: 100%;
 	height: 100%;
 	backdrop-filter: blur(6px);
-	// background-color: $colorBlack;
 	opacity: 0.5;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -53,16 +45,15 @@
 .modal {
 	z-index: 9;
 	position: absolute;
-	// top: 50%;
-	// margin: 0px 144px;
-	// background-color: white;
-
 }
 
 .modal_body {
 	position: relative;
 	border-radius: 20px;
-	// background-color: $colorWhite // padding-top: 27.5px;
+}
+
+.sl__wrapper {
+	padding: 0 144px;
 }
 
 .body {
@@ -85,18 +76,11 @@
 	align-items: center;
 	z-index: 2;
 	cursor: pointer;
-	// background-color: $colorBlack;
 }
 
 .close_svg {
 	width: 27.5px;
 	height: 27.5px;
-}
-
-.modal_body {
-
-	// max-width: 1000px;
-	// overflow: hidden;
 }
 
 .modal_swiper {
@@ -105,15 +89,6 @@
 
 .swiper {
 	padding-bottom: 10px;
-}
-
-.sl__wrapper {
-	background-color: rgba(165, 165, 165, 0.9);
-
-}
-
-.body {
-	// background-color: $colorWhite;
 }
 
 .vertical_Class {
@@ -157,10 +132,7 @@
 		height: 100%;
 		display: block;
 	}
-
-	// padding-bottom: 30px;
 }
-
 
 .block_text {
 	display: flex;
@@ -173,19 +145,12 @@
 	}
 }
 
-
-
 .modal {
-	max-width: 912px;
+	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 24px;
 	z-index: 9;
-	// border-radius: 20px;
-	// overflow: hidden 
-	// display: flex;
-	// justify-content: center;
-	// align-items: center
 }
 
 .modal_body {}
@@ -200,6 +165,10 @@
 
 .text {
 	@include fontRoboto400Regular(20px, 150%);
+}
+
+.closeBtn_mobile {
+	display: none;
 }
 
 @include breakpoint-large {
@@ -230,18 +199,21 @@
 }
 
 @include breakpoint-medium {
+	.closeBtn_dekstop {
+		display: none;
+	}
+
+	.sl__wrapper {
+		padding: 0;
+	}
+
+	.closeBtn_mobile {
+		display: inline-block;
+	}
+
 	.modal {
 		max-width: 100%;
 		z-index: 9;
-	}
-
-	// .body {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// }
-
-	.modal {
-		// z-index: ;
 	}
 
 	.close {
@@ -250,21 +222,9 @@
 		right: 24px;
 	}
 
-	.closeBtn {}
-
-	.sl__img {
-		img {
-			// max-width: 70%;
-		}
-	}
-
 	.text {
 		font-size: 16px;
 	}
-
-	// .modal {
-	// 	max-width: 350px;
-	// }
 
 	.close {
 		right: 9px;
@@ -276,34 +236,14 @@
 	}
 
 	.vertical_Class {
-		// 	position: initial;
-		// 	width: max-content;
-		// 	display: flex;
-		// 	justify-content: center;
-		// 	margin: 0 auto;
 		padding-bottom: 20px;
 	}
 }
 
 @include breakpoint-small {
-	.close {
-		// position: absolute;
-		// top: 24px;
-		// right: 24px;
-	}
-
-
 	.body {
 		display: flex;
 		flex-direction: column;
-	}
-
-	.closeBtn {}
-
-	.sl__img {
-		img {
-			// max-width: 70%;
-		}
 	}
 
 	.text {
@@ -315,9 +255,4 @@
 		padding-top: 50px;
 	}
 
-	.body {
-		// display: flex !important;
-		// flex-direction: column !important;
-		// grid-gap: 13px;
-	}
 }

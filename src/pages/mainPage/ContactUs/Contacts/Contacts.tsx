@@ -29,7 +29,7 @@ const contactsDate: contactsInterface[] = [
 		adress: 'улица Мирали Махмадали 88',
 	}, {
 		img: contactLogo_3,
-		title: 'INFO@roller.TJ',
+		title: 'info@roller.tj',
 		adress: 'для клиентов любых регионов',
 	}, {
 		img: contactLogo_4,

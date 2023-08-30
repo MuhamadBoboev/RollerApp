@@ -141,11 +141,14 @@ const Brands: React.FC = () => {
 				<ul className={st.brands__grid} >
 					{brandsDate.map((element, index) =>
 						<motion.li
-							className={st.brand__wrapper + ' ' + st.brand__ + index + 1}
+							viewport={{
+								once: true
+							}}
 							initial="hidden"
 							whileInView="animate"
 							custom={index}
 							variants={imgVariants}
+							className={st.brand__wrapper + ' ' + st.brand__ + index + 1}
 						>
 							<BrandItem branItem={element} index={index} />
 						</motion.li>

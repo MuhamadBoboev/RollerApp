@@ -30,8 +30,8 @@ const Banner = ({ banner }: Props) => {
 						bulletActiveClass: `${st.bulletActive}`,
 					}}
 					scrollbar={{ draggable: true }}
-					onSwiper={(swiper) => console.log(swiper)}
-					onSlideChange={() => console.log('slide change')}
+				// onSwiper={(swiper) => console.log(swiper)}
+				// onSlideChange={() => console.log('slide change')}
 				>
 					<SwiperSlide><OtherBanner banner={banner} /></SwiperSlide>
 					<SwiperSlide><OtherBanner banner={banner} /></SwiperSlide>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import st from './BrandItem.module.scss'
-import ComponentModal from '../modal'
+import ComponentModal from '../modalNew'
+import { motion } from 'framer-motion'
 
 interface Props {
 	branItem: BrandsInterface
@@ -19,8 +20,11 @@ interface BrandInterface {
 
 const BrandItem = ({ branItem, index }: Props) => {
 	const [modalActive, setModalActive] = useState(false)
+
 	return (<>
-		<div key={branItem.image} onClick={() => setModalActive(true)}
+		<div
+			key={branItem.image}
+			onClick={() => setModalActive(true)}
 			className={st.brand__wrapper + ' ' + st.brand__ + index + 1}>
 			<div className={st.brand__body} >
 				<div className={st.brand__block}>

@@ -69,14 +69,6 @@ const Form = () => {
 					</div>
 				</div>
 			</motion.div>
-			{/* <label>First Name</label>
-      <input {...register("firstName")} />
-      <label>Gender Selection</label> */}
-			{/* <select {...register("gender")} >
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="other">other</option>
-      </select> */}
 
 		</form>
 

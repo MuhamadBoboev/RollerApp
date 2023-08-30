@@ -34,7 +34,7 @@ const ComponentModalNew = ({ active, setActive, dataModal }: Props) => {
 							event.preventDefault()
 							setActive(false)
 						}}>
-							<img className={st.closeBtn} src={close_img} width={27.5} height={27.5} ></img>
+							<img className={st.closeBtn} src={'./assets/image/close_svg.svg'} width={27.5} height={27.5} ></img>
 						</div>
 						<div className={st.content}>
 							<div className={st.modal_swiper}>

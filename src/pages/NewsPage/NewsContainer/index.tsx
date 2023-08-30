@@ -33,6 +33,9 @@ const NewsContainer = ({ items }: Props) => {
 						<motion.div
 							initial="hidden"
 							whileInView="animate"
+							viewport={{
+								once: true
+							}}
 							custom={index}
 							variants={imgVariants}
 						>

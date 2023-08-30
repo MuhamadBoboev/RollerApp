@@ -7,6 +7,7 @@ import socialLogo_4 from './img/socialLogo_4.svg'
 import socialLogo_5 from './img/socialLogo_5.svg'
 
 const Footer = () => {
+	const date = new Date().getFullYear()
 	return (<section className={'padding_top_150 ' + st.footer} >
 		<div className={st.footer__wrapper}>
 			<div className={'_container ' + st.container} >
@@ -50,7 +51,7 @@ const Footer = () => {
 							<p className={'text ' + st.footer____text} >
 								г. Душанбе <br></br>улица Мирали Махмадали 88
 							</p>
-							<a href='https://yandex.ru/maps/float,float' className={st.footer__map} >
+							<a href='https://yandex.ru/maps/-/CDQ7R2ZP' target='_blank' className={st.footer__map} >
 								Показать на карте
 							</a>
 						</div>
@@ -110,7 +111,7 @@ const Footer = () => {
 		<div className={st.footer__bottom} >
 			<div className={'_container ' + st.bottom__container} >
 				<p className={st.bottom__text} >
-					©&nbsp;All&nbsp;rights&nbsp;reserved&nbsp;by&nbsp;ROLLER&nbsp;Development
+					©&nbsp;все&nbsp;права&nbsp;защищены&nbsp;{date}
 				</p>
 				<a href='' className={st.bottom__logo} >
 					DEVELOPED&nbsp;BY&nbsp;<span className={st.bottom__red}>BO</span>/BO

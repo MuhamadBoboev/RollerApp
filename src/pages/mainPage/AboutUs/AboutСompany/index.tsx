@@ -2,7 +2,7 @@ import st from './AboutСompany.module.scss'
 import Button from '../../../../components/ui/Button'
 import { motion } from 'framer-motion'
 
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const AboutСompany = () => {
 	return (
@@ -47,8 +47,10 @@ const AboutСompany = () => {
 								и турецкими компаниями как «Krauss Mafei», Renolit, «Mikrosan», «Akdeniz» и у нас трудятся высококвалифицированные кадры.
 							</p>
 							<div>
-								<div className='/aboutCompany'>
-									<Button children='Узнать больше' />
+								<div>
+									<Link to='aboutCompany'>
+										<Button children='Узнать больше' />
+									</Link>
 								</div>
 							</div>
 						</div>

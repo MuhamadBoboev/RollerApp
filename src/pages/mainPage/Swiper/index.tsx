@@ -26,7 +26,6 @@ export const dateForSwiper: SwiperInterfaceDate[] = [
 		text: 'Жилой комплекс Борбад, состоит из двух блоков, каждый из которых имеет 16 этажей. Строительство было завершено в 2021 году. Местоположение комплекса - Борбад 1/2, рядом с Коммерческим университетом и Армутом. Оконные системы Unopen обеспечивают надежную защиту от шума и сохраняют тепло внутри квартиры. А подоконники от Unopen, выполненные в прекрасном золотистом дубовом цвете, добавят неповторимый шарм интерьеру.',
 		image: '/assets/image/works_2.webp'
 	},
-
 ]
 const SwiperComponent = () => {
 	const imgVariants = {
@@ -48,10 +47,7 @@ const SwiperComponent = () => {
 		<div className={st.swiper__wrapper} >
 			<div className={st.swiper__section} >
 				<div className={st.container}>
-					<motion.div className={st.swiper__main}
-						initial="hidden"
-						whileInView="animate"
-						variants={imgVariants}
+					<div className={st.swiper__main}
 					>
 						<Swiper
 							className={st.swiper}
@@ -70,7 +66,14 @@ const SwiperComponent = () => {
 						>{dateForSwiper.map((el) =>
 							<SwiperSlide>
 								<div className={st.sl__wrapper} >
-									<div className={st.sl__body}>
+									<motion.div
+										viewport={{
+											once: true
+										}}
+										initial="hidden"
+										whileInView="animate"
+										variants={imgVariants}
+										className={st.sl__body}>
 										<h3 className={st.sl__subtitle}>
 											{el.subtitle}
 										</h3>
@@ -80,18 +83,25 @@ const SwiperComponent = () => {
 										<p className={'text ' + st.text} >
 											{el.text}
 										</p>
-									</div>
-									<div className={st.sl__img} >
+									</motion.div>
+									<motion.div
+										viewport={{
+											once: true
+										}}
+										initial="hidden"
+										whileInView="animate"
+										variants={imgVariants}
+										className={st.sl__img} >
 										<img src={el.image}
 											width={630}
 											height={433}
 											alt='sad'
 										></img>
-									</div>
+									</motion.div>
 								</div>
 							</SwiperSlide>)}
 						</Swiper>
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</div>

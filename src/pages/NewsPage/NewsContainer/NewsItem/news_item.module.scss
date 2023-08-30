@@ -8,18 +8,26 @@
 	overflow: hidden;
 	display: flex;
 	grid-gap: 32px;
+	max-height: 220px;
+
+	@include breakpoint-medium {
+		max-height: none;
+	}
+
 }
 
 .img {
+	box-sizing: border-box;
 	border-radius: 20px;
 	overflow: hidden;
+	// height: 230px;
 }
 
 .item__body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	grid-gap: 40px;
+	grid-gap: 10px;
 	padding: 19px 0;
 	padding-right: 89px;
 	height: 100%;

@@ -179,6 +179,9 @@ const Partners = () => {
 					{PartnersDate.map((el, index) =>
 						<motion.li
 							initial="hidden"
+							viewport={{
+								once: true
+							}}
 							whileInView="animate"
 							custom={index}
 							variants={imgVariants}

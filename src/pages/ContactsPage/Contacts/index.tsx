@@ -103,7 +103,7 @@ const Contacts = () => {
 									<div className={st.info__item} >
 										<p className={st.info_text} >
 											<span className={st.info_span} >Рабочие дни:&nbsp; </span>
-											улица Мирали Махмадали 88
+											Понедельник - Суббота (09:00 до 17:00)
 										</p>
 									</div>
 									<div className={st.info__item} >
