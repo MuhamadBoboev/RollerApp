@@ -6,32 +6,40 @@ import advantage_3 from './img/advantage_3.svg'
 import advantage_4 from './img/advantage_4.svg'
 import advantage_5 from './img/advantage_5.svg'
 import { motion } from 'framer-motion'
+import { BigTitleSection } from '../../../../components/ui/BigTitleSection'
+import { Scrollbar } from 'swiper/modules';
 
 interface AdvantageInterface {
 	img: any;
 	title: string;
 	link: string
+	text: string
 }
 const advantageDate: AdvantageInterface[] = [
 	{
 		img: advantage_1,
-		title: 'Большой опыт на рынке Таджикистана',
+		title: 'Опыт',
+		text: '17 лет опыта на рынке Таджикистана',
 		link: 'aboutCompany'
 	}, {
 		img: advantage_2,
-		title: 'Высокое качество ламинации',
+		title: 'Стандарты',
+		text: 'Европейские стандарты исполнения',
 		link: 'aboutCompany'
 	}, {
 		img: advantage_3,
-		title: 'Современное	оборудование',
+		title: 'Ламинация',
+		text: 'Высокое качество ламинации от  Renolit',
 		link: 'aboutCompany'
 	}, {
 		img: advantage_4,
-		title: 'Европейские стандарты исполнения',
+		title: 'Качество',
+		text: 'Мы даем от 15 лет гарантии на наши системы ПФХ',
 		link: 'aboutCompany'
 	}, {
 		img: advantage_5,
-		title: 'Гарантия качества',
+		title: 'Оборудование',
+		text: 'Современное, немецкое и турецкое оборудование по международным стандартам',
 		link: 'aboutCompany'
 	}
 ]
@@ -53,9 +61,10 @@ const imgVariants = {
 
 const Advantage = () => {
 	return (<div className={st.advantage} >
-		<h2 className={'text_h2 ' + st.advantage_main_title} >
+		{/* <h2 className={'text_h2 ' + st.advantage_main_title} >
 			Преимущества
-		</h2>
+		</h2> */}
+		<BigTitleSection>Преимущества</BigTitleSection>
 		<ul className={st.advantage_wrapper} >
 			{advantageDate.map((el, index) =>
 				<li className={st.advantage__item} >
@@ -66,22 +75,26 @@ const Advantage = () => {
 						variants={imgVariants}
 						className={st.advantage__item_body} >
 						<div className={st.advantage__item__top} >
-							<div className={st.advantage__bl_img} >
-								<img src={el.img} ></img>
-							</div>
+							<p className={st.advantage__text}>
+								{el.title}
+							</p>
 							<div className={st.advantage__text_block} >
-								<p className={st.advantage__text}>
-									{el.title}
-								</p>
+								<p className={st.text} >{el.text}</p>
+								<div className={st.advantage__bl_img} >
+									<img src={el.img} width={62} height={62} ></img>
+								</div>
 							</div>
 						</div>
-						<div className={st.advantage__bl_link} >
+						{/* <div className={st.advantage__bl_link} >
 							<Link to={el.link} className={st.advantage__link} >Подробнее</Link>
-						</div>
+						</div> */}
 					</motion.div>
 				</li>
 			)}
 		</ul>
+		<div className={st.fon} >
+			<img src='/assets/image/advantage_fon.svg' />
+		</div>
 	</div>)
 }
 export default Advantage;

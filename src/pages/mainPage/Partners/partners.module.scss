@@ -9,7 +9,10 @@
 }
 
 .partners__text {
-	max-width: 670px
+	text-align: start;
+	display: block;
+	padding-right: 60px;
+	// max-width: 670px
 }
 
 .partners__title {
@@ -19,7 +22,7 @@
 .partners__title_body {
 	display: flex;
 	flex-direction: column;
-	grid-gap: 24px
+	grid-gap: 24px;
 }
 
 .partners__text_block {
@@ -30,27 +33,79 @@
 }
 
 .partners__items {
-	@include grid(repeat(6, 1fr), 1fr 1fr);
-	grid-gap: 24px;
+	position: relative;
+	@include grid(repeat(8, 1fr), max-content max-content);
+	grid-gap: 30px;
 
+}
+
+.fon {
+	position: absolute;
+	// top: 20px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	// bottom: 20px;
+	right: 0%;
+	width: 100vmax;
+	height: 100%;
+	z-index: -1;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
 }
 
 .partner__item {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 20px;
-	outline: solid 1px $colorGrey;
-}
+	// border-radius: 20px;
+	background-color: $colorWhite;
+	// outline: solid 1px $colorGrey;
+	-webkit-box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.5);
+	-moz-box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.5);
+	box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.5);
 
-.partner__item:nth-child(1) {
+	&:nth-child(1) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 3;
+		display: flex;
+		flex-direction: column;
 
-	grid-column-start: 1;
-	grid-column-end: 3;
+		div:first-child {
+			&>div:nth-child(2) {
+				margin-top: 38px;
+			}
+		}
+
+		article {
+			div {
+				margin-top: 10px;
+				width: 138px;
+
+				&::after {
+					padding-bottom: 100%;
+				}
+			}
+
+		}
+
+		.partner {
+			justify-content: center;
+			order: 1;
+
+			.bl_img {
+				display: none;
+			}
+		}
+	}
 }
 
 .partner__item:nth-child(2) {
-
 	grid-column-start: 3;
 	grid-column-end: 5;
 }
@@ -61,18 +116,23 @@
 }
 
 .partner__item:nth-child(4) {
-	grid-column-start: 1;
-	grid-column-end: 4;
+	grid-column-start: 7;
+	grid-column-end: 9;
 }
 
 .partner__item:nth-child(5) {
-	grid-column-start: 4;
-	grid-column-end: 7;
+	grid-column-start: 3;
+	grid-column-end: 6;
+}
+
+.partner__item:nth-child(6) {
+	grid-column-start: 6;
+	grid-column-end: 9;
 }
 
 .partner__item {
 	// max-width: 288px;
-	max-height: 160px;
+	// max-height: 160px;
 }
 
 .partner__body {

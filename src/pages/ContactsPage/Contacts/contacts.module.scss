@@ -14,7 +14,7 @@
 }
 
 .container {
-	padding-top: 15px;
+	width: 100%;
 }
 
 .info_text {
@@ -53,7 +53,7 @@
 	background-color: $colorBlockLightGrey;
 	grid-gap: 21px;
 	padding: 40px 32px;
-	border-radius: 20px;
+	// border-radius: 20px;
 }
 
 .info__title {
@@ -79,7 +79,7 @@
 	background-color: $colorWhite;
 	width: 40px;
 	height: 40px;
-	border-radius: 50%;
+	// border-radius: 50%;
 }
 
 .info__block {
@@ -104,7 +104,7 @@
 
 .item_1 {
 	grid-column-start: 1;
-	grid-column-end: 5;
+	grid-column-end: 6;
 }
 
 .item_2 {
@@ -118,10 +118,10 @@
 }
 
 .item__map {
-	grid-column-start: 5;
+	grid-column-start: 6;
 	grid-column-end: 11;
 	grid-row-start: 1;
-	border-radius: 20px;
+	// border-radius: 20px;
 	overflow: hidden;
 }
 

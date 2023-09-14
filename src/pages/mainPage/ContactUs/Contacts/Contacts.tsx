@@ -7,11 +7,9 @@ import contactLogo_4 from './img/contactLogo_4.svg'
 import { motion } from 'framer-motion'
 
 
-import socialLogo_1 from './img/socialLogo_1.svg'
-import socialLogo_2 from './img/socialLogo_2.svg'
-import socialLogo_3 from './img/socialLogo_3.svg'
-import socialLogo_4 from './img/socialLogo_4.svg'
-import socialLogo_5 from './img/socialLogo_5.svg'
+import { BigTitleSection } from '../../../../components/ui/BigTitleSection'
+import Wrapper from '../../../../components/Wrapper'
+import Form from '../Form'
 
 interface contactsInterface {
 	img: string;
@@ -56,10 +54,11 @@ const Contacts = () => {
 		})
 	}
 	return (
-		<div className={st.contacts}>
-			<h2 className={'text_h2 ' + st.contacts__title} >
+		<section className={st.contacts}>
+			{/* <h2 className={'text_h2 ' + st.contacts__title} >
 				свяжитесь с нами
-			</h2>
+			</h2> */}
+			<BigTitleSection>контакты</BigTitleSection>
 			<div className={st.contacts__title_block}>
 				<p className={' text ' + st.contacts__subtitle} >
 					Доступность в каждом регионе — Постоянно расширяющаяся
@@ -104,7 +103,8 @@ const Contacts = () => {
 							</li>
 						)}
 					</ul>
-					<div className={st.social}>
+					<Form />
+					{/* <div className={st.social}>
 						<ul className={st.social__bl_links}>
 							<li className={st.social__link} >
 								<a href='https://www.facebook.com/profile.php?id=100093955908004' className={st.social__href}>
@@ -127,10 +127,10 @@ const Contacts = () => {
 								</a>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 				</motion.div>
 			</div>
-		</div>)
+		</section>)
 }
 
 export default Contacts

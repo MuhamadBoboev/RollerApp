@@ -2,58 +2,67 @@
 
 /* ********* mixins ********** */
 @mixin fontRoboto700Black($size, $lineHeight) {
-  font-family: "Roboto";
+	font-family: "Roboto";
 	font-weight: 900;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontRoboto700Bold($size, $lineHeight) {
-  font-family: "Roboto";
+	font-family: "Roboto";
 	font-weight: 700;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontRoboto600Semi-Bold($size, $lineHeight) {
-  font-family: "Roboto";
+	font-family: "Roboto";
 	font-weight: 600;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontRoboto500Medium($size, $lineHeight) {
-  font-family: "Roboto";
+	font-family: "Roboto";
 	font-weight: 500;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontRoboto400Regular($size, $lineHeight) {
-  font-family: "Roboto";
+	font-family: "Roboto";
 	font-weight: 400;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontMontserrat700Bold($size, $lineHeight) {
-  font-family: "Montserrat_Bold";
+	font-family: "Montserrat_Bold";
 	font-weight: 700;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontMontserrat600Semi-Bold($size, $lineHeight) {
-  font-family: "Montserrat_SemiBold";
+	font-family: "Montserrat_SemiBold";
 	font-weight: 600;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin fontMontserrat500Medium($size, $lineHeight) {
-  font-family: "Montserrat_Medium";
+	font-family: "Montserrat_Medium";
 	font-weight: 500;
-  font-size: $size;
-  line-height: $lineHeight;
+	font-size: $size;
+	line-height: $lineHeight;
 }
+
 @mixin grid($columns, $rows) {
-  display: grid;
-  grid-template-columns: $columns;
-  grid-template-rows: $rows;
+	display: grid;
+	grid-template-columns: $columns;
+	grid-template-rows: $rows;
 }
+
 // @mixin pseudo($content: "", $display: block, $pos: absolute) {
 //   content: $content;
 //   display: $display;
@@ -63,156 +72,144 @@
 
 /* ************* mixins Bobo * *************/
 @mixin font-face($name, $style: 'normal', $weight: 400, $swap: true, $woff, $woff2) {
-  @font-face {
-    font-family: $name;
-    font-style: $style;
-    @if $swap {
-      font-display: swap;
-    }
-    font-weight: $weight;
+	@font-face {
+		font-family: $name;
+		font-style: $style;
 
-    src: url($woff2) format("woff2"),
-    url($woff) format("woff");
-    @content;
-  }
+		@if $swap {
+			font-display: swap;
+		}
+
+		font-weight: $weight;
+
+		src: url($woff2) format("woff2"),
+		url($woff) format("woff");
+		@content;
+	}
 }
 
 @mixin clearfix() {
-  &::before,
-  &::after {
-    display: table;
-    clear: both;
-    content: "";
-  }
+
+	&::before,
+	&::after {
+		display: table;
+		clear: both;
+		content: "";
+	}
 }
 
 @mixin min-max($min-width, $max-width, $padding) {
-  box-sizing: border-box;
-  min-width: $min-width;
-  max-width: $max-width;
-  padding: 0 $padding;
-  margin: 0 auto;
-  @content;
+	box-sizing: border-box;
+	min-width: $min-width;
+	max-width: $max-width;
+	padding: 0 $padding;
+	margin: 0 auto;
+	@content;
 }
 
 @mixin adaptive-video() {
-  position: relative;
-  height: 0;
-  padding-top: 30px;
-  padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
-  overflow: hidden;
+	position: relative;
+	height: 0;
+	padding-top: 30px;
+	padding-bottom: 56.25%;
+	/* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+	overflow: hidden;
 
-  iframe,
-  lite-youtube {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+	iframe,
+	lite-youtube {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 
-  @content;
+	@content;
 }
 
 @mixin visually-hidden() {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(100%);
-  white-space: nowrap;
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(100%);
+	white-space: nowrap;
+	border: 0;
 }
 
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+	@return $value / ($value * 0 + 1);
 }
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size: $min-font-size;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-      }
-    }
-  }
-}
+	@if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+		& {
+			font-size: $min-font-size;
 
-@mixin wrapper {
-  width: 100%;
-  @include min-max(320px, $wrapper, 16px);
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
 
-  @media (max-width: $desktopSmall) {
-    @include min-max(320px, $wrapperDesktopSmall, 16px);
-  }
-
-  @media (max-width: $tabletSmall) {
-    @include min-max(320px, $wrapperTablet, 16px);
-  }
-
-  @media (max-width: $mobileLarge) {
-    @include min-max(320px, $wrapperMobile, 16px);
-  }
-
-  @content;
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
+		}
+	}
 }
 
 @mixin backdrop {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -100%;
-    left: 0;
-    right: 0;
-    bottom: -1000px;
-    background: rgba(0, 0, 0, .7);
-    backdrop-filter: blur(50px) grayscale(100%);
-    @content;
-  }
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -100%;
+		left: 0;
+		right: 0;
+		bottom: -1000px;
+		background: rgba(0, 0, 0, .7);
+		backdrop-filter: blur(50px) grayscale(100%);
+		@content;
+	}
 }
 
 @mixin lineclamp($lines) {
-  display: -webkit-box;
-  display: -moz-box;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  overflow: hidden;
-  line-clamp: $lines;
-  -webkit-line-clamp: $lines;
-  @content
+	display: -webkit-box;
+	display: -moz-box;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+	overflow: hidden;
+	line-clamp: $lines;
+	-webkit-line-clamp: $lines;
+	@content
 }
 
 @mixin last-margin-null($position: 'bottom') {
-  &:last-of-type {
-    @if ($position == 'bottom') {
-      margin-bottom: 0;
-    }
+	&:last-of-type {
+		@if ($position=='bottom') {
+			margin-bottom: 0;
+		}
 
-    @if ($position == 'left') {
-      margin-left: 0;
-    }
+		@if ($position=='left') {
+			margin-left: 0;
+		}
 
-    @if ($position == 'top') {
-      margin-top: 0;
-    }
+		@if ($position=='top') {
+			margin-top: 0;
+		}
 
-    @if ($position == 'right') {
-      margin-right: 0;
-    }
-  }
-  @content;
+		@if ($position=='right') {
+			margin-right: 0;
+		}
+	}
+
+	@content;
 }

@@ -48,7 +48,7 @@ const HeaderContainer: FC = () => {
 							</div>
 						</div>
 					</div>
-					<div className={st.block_search} >
+					{/* <div className={st.block_search} >
 						<div className={st.bl_search} >
 							<input type='text' className={`text ` + `${st.bl_search_text}`} placeholder='Поиск'></input>
 							<div className={st.bl_search_svg} >
@@ -57,7 +57,7 @@ const HeaderContainer: FC = () => {
 								</img>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>)

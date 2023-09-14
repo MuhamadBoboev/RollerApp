@@ -8,7 +8,11 @@
 	grid-gap: 40px;
 }
 
-.news__header {}
+.news__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 .news__items {
 	@include grid(1fr 1fr 1fr, 1fr);
@@ -24,7 +28,7 @@
 .news__img_block {
 	img {
 
-		border-radius: 20px;
+		// border-radius: 20px;
 		width: 100%;
 		height: auto;
 	}

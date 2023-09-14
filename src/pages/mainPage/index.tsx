@@ -33,10 +33,10 @@ const MainPage = () => {
 			<Partners />
 			<SwiperComponent />
 			<Brands />
-			<Products />
+			{/* <Products /> */}
 			<PhotoGallery />
 			<OurServices />
-			<BlockItems title='ДАННАЯ УСЛУГА ПОЗВОЛЯЕТ:' textBottom={true} props={dateItemsBlocks} />
+			{/* <BlockItems title='ДАННАЯ УСЛУГА ПОЗВОЛЯЕТ:' textBottom={true} props={dateItemsBlocks} /> */}
 			<News />
 			<ContactUs />
 		</div>

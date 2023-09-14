@@ -1,3 +1,6 @@
+import Container from '../../../components/Container'
+import Wrapper from '../../../components/Wrapper'
+import { BigTitleSection } from '../../../components/ui/BigTitleSection'
 import { TitleSection } from '../../../components/ui/TitleSection'
 import st from './photo_gallery.module.scss'
 import { motion } from 'framer-motion'
@@ -21,10 +24,11 @@ const PhotoGallery = () => {
 		})
 	}
 	return (<>
-		<div className={st.container} >
-			<div className={st.wrapper}>
+		<Wrapper className={st.container} >
+			<Container className={st.wrapper}>
 				<div className={st.title_block} >
-					<TitleSection children='ФОТОГАЛЕРЕЯ' />
+					{/* <TitleSection children='ФОТОГАЛЕРЕЯ' /> */}
+					<BigTitleSection>ФОТОГАЛЕРЕЯ</BigTitleSection>
 					<Link to='/photo_gallery' className={st.link_block} >
 						<p className={st.link_text} >
 							Посмотреть все
@@ -40,21 +44,36 @@ const PhotoGallery = () => {
 						whileInView="animate"
 						variants={imgVariants}
 						className={st.item} >
-						<img src={'/assets/image/PhotoGallery_1.webp'} width={569} height={350} ></img>
+						<div className={st.bl_img} >
+							<img src={'/assets/image/PhotoGallery_1.webp'} width={569} height={350} ></img>
+						</div>
 					</motion.div>
 					<motion.div
 						initial="hidden"
 						whileInView="animate"
 						variants={imgVariants}
 						className={st.item} >
-						<img src={'/assets/image/PhotoGallery_2.webp'} width={275} height={165} ></img>
+						<div className={st.bl_img} >
+							<img src={'/assets/image/PhotoGallery_2.webp'} width={275} height={165} ></img>
+						</div>
 					</motion.div>
 					<motion.div
 						initial="hidden"
 						whileInView="animate"
 						variants={imgVariants}
 						className={st.item} >
-						<img src={'/assets/image/PhotoGallery_3.webp'} width={275} height={165} ></img>
+						<div className={st.bl_img} >
+							<img src={'/assets/image/PhotoGallery_3.webp'} width={275} height={165} ></img>
+						</div>
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="animate"
+						variants={imgVariants}
+						className={st.item} >
+						<div className={st.bl_img} >
+							<img src={'/assets/image/PhotoGallery_3.webp'} width={275} height={165} ></img>
+						</div>
 					</motion.div>
 				</div>
 				<div className={st.wrapper__bottom}>
@@ -67,8 +86,8 @@ const PhotoGallery = () => {
 						</div>
 					</Link>
 				</div>
-			</div>
-		</div>
+			</Container>
+		</Wrapper>
 	</>)
 }
 export default PhotoGallery

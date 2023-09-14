@@ -1,13 +1,14 @@
+import Wrapper from '../../../components/Wrapper'
 import Advantage from './Advantage'
 import Choice from './Choice'
 import st from './advantage_choice.module.scss'
 
 const AdvantageChoice = () => {
-	return (<section className={'padding_top_150 ' + st.advantageChoice}>
+	return (<Wrapper className={st.advantageChoice}>
 		<div className={'_container ' + st.contianer}>
-			<Advantage/>
-			<Choice/>
+			<Advantage />
+			{/* <Choice /> */}
 		</div>
-	</section>)
+	</Wrapper>)
 }
 export default AdvantageChoice

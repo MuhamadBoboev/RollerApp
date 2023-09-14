@@ -2,10 +2,39 @@
 @import 'src/styles/media';
 @import 'src/styles/mixins';
 
+.container {
+	display: flex;
+	grid-gap: 20px;
+	justify-content: space-between;
+}
+
 .banner__wrapper {
+	margin-top: 45px;
 	width: 100%;
-	height: auto;
+}
+
+.img_bl {
 	position: relative;
+	max-width: 315px;
+	width: 100%;
+
+	&::after {
+		content: '';
+		display: block;
+		padding-bottom: 100%;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: contain;
+	}
 }
 
 .view {
@@ -38,40 +67,34 @@
 }
 
 .banner__body {
-	padding: 152px 0;
+	padding: 20px 0;
 	max-width: 610px;
-	margin: 0 auto;
+	// margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	grid-gap: 33px;
+	grid-gap: 73px;
 }
 
 .title {
 	font-size: 64px;
-	color: $colorRed;
+	color: $colorWhite;
+	-webkit-text-stroke: 2px $colorBlack;
 	opacity: 0;
 	transform: translateY(40px);
+}
+
+.title_red {
+	color: $colorRed;
 }
 
 .texting {
 	font-size: 24px;
-	color: $colorWhite;
+	color: $colorBlackLight;
 	line-height: 150%;
-	text-align: center;
 	opacity: 0;
 	transform: translateY(40px);
 }
 
-// .block_info__wrapper {
-// 	@include grid(1fr 1fr, 1fr);
-// 	grid-gap: 40px
-// }
-// .variant_first {
-// 	@include grid(1fr max-content, 1fr);
-// }
-// .variant_second {
-// 	@include grid(max-content 1fr, 1fr);
-// }
 
 @include breakpoint-medium {
 	.banner__body {

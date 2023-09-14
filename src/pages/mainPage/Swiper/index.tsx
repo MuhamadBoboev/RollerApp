@@ -6,6 +6,9 @@ import 'swiper/scss';
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import './swiper.scss'
+import { BigTitleSection } from '../../../components/ui/BigTitleSection';
+import Wrapper from '../../../components/Wrapper';
+import Container from '../../../components/Container';
 
 interface SwiperInterfaceDate {
 	subtitle: string;
@@ -13,10 +16,13 @@ interface SwiperInterfaceDate {
 	text: string;
 	image: string;
 }
+interface DescriptionInterface {
+	name: string
+}
 export const dateForSwiper: SwiperInterfaceDate[] = [
 	{
 		subtitle: 'Наши работы',
-		title: 'Жилой комплекс Рассвет',
+		title: 'Жилой комплекс “Рассвет”',
 		text: 'Жилой комплекс Рассвет состоит из четырех блоков, каждый из которых имеет шесть этажей. Строительство было завершено в 2023 году. Одной из особенностей ЖК Рассвет являются оконные системы и подоконники от Unopen. Эти высококачественные оконные конструкции обеспечивают отличную звуко- и теплоизоляцию, а также защиту от нежелательных внешних воздействий. Их антрацитовый цвет придает эксклюзивный и современный вид дому. Комплекс расположен по адресу Фучика 25 (рядом с мясокомбинатом, а также остановкой конечного пункта маршрута 8).',
 		image: '/assets/image/works_3.webp'
 	},
@@ -44,8 +50,11 @@ const SwiperComponent = () => {
 		})
 	}
 	return (
-		<div className={st.swiper__wrapper} >
-			<div className={st.swiper__section} >
+		<Wrapper className={st.SwiperComponent} >
+			<Container >
+				<BigTitleSection>Портфолио</BigTitleSection>
+			</Container>
+			<div className={st.wrapper} >
 				<div className={st.container}>
 					<div className={st.swiper__main}
 					>
@@ -104,7 +113,7 @@ const SwiperComponent = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Wrapper>
 	);
 };
 export default SwiperComponent

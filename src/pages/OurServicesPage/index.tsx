@@ -16,7 +16,7 @@ const dateItemsBlocks: IBlockItems[] = [
 const OurServicesPage = () => {
 	return (<>
 		<OurServices />
-		<BlockItems title='ДАННАЯ УСЛУГА ПОЗВОЛЯЕТ:' textBottom props={dateItemsBlocks} />
+		{/* <BlockItems title='ДАННАЯ УСЛУГА ПОЗВОЛЯЕТ:' textBottom props={dateItemsBlocks} /> */}
 	</>)
 }
 export default OurServicesPage

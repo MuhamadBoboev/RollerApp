@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import st from './bannerCompany.module.scss'
 import { useInView } from 'framer-motion';
 import clsx from 'clsx';
+import Container from '../../../components/Container';
 
 interface Props {
 	banner: bannerDate
@@ -21,19 +22,21 @@ const BannerCompany = ({ banner }: Props) => {
 
 	return (<>
 		<section className={clsx(st.banner, isView && st.view)} ref={ref}>
-			<div className={st.banner__wrapper} >
-				<div className={'_container ' + st.container} >
+			<Container className={st.banner__wrapper} >
+				<div className={st.container} >
 					<div className={st.banner__body} >
-						<h1 className={'text_h1 ' + st.title}>{banner.title}</h1>
-						<p className={' ' + st.texting} >
+						<h1 className={'text_h1 ' + st.title}>{banner.title}
+							<span className={st.title_red}>&nbsp;ROLLER</span>
+						</h1>
+						<p className={st.texting} >
 							{banner.text}
 						</p>
 					</div>
+					<div className={st.img_bl} >
+						<img src='/assets/image/main_img_2.webp' alt='logo' width={315} height={315} />
+					</div>
 				</div>
-				<div className={st.banner__fon} >
-					<img className={st.banner__img} src={banner.image} width={1440} height={520} alt='banner' ></img>
-				</div>
-			</div>
+			</Container>
 		</section>
 	</>)
 }

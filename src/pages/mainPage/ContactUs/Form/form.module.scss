@@ -3,9 +3,9 @@
 @import 'src/styles/media';
 
 .form__wrapper {
-	padding: 40px 74px;
+	padding: 32px 28px;
 	background-color: $colorBlockLightGrey;
-	border-radius: 20px;
+	// border-radius: 20px;
 }
 
 .form__body {
@@ -15,7 +15,7 @@
 }
 
 .form__items {
-	@include grid(1fr 1fr, repeat(5, 1fr));
+	@include grid(1fr 1fr, 1fr 1fr);
 	grid-column-gap: 20px;
 	grid-row-gap: 16px;
 
@@ -26,11 +26,27 @@
 	height: 100%;
 }
 
-.form__item:nth-child(5) {
+.form__item:nth-child(1) {
 	grid-column-start: 1;
+	grid-column-end: 2;
+	// grid-row-start: 3;
+	// grid-row-end: 7;
+	// text-align: left;
+}
+
+.form__item:nth-child(2) {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	// text-align: left;
+}
+
+.form__item:nth-child(3) {
+	grid-column-start: 2;
 	grid-column-end: 3;
-	grid-row-start: 3;
-	grid-row-end: 7;
+	grid-row-start: 1;
+	grid-row-end: 3;
 	text-align: left;
 }
 
@@ -41,7 +57,7 @@
 	outline: none;
 	background-color: $colorWhite;
 	padding: 16px 24px;
-	border-radius: 33.5px;
+	// border-radius: 33.5px;
 	box-sizing: border-box;
 	resize: none;
 }
@@ -53,7 +69,7 @@
 	box-shadow: none;
 	padding: 16px 24px;
 	border: none;
-	border-radius: 33.5px;
+	// border-radius: 33.5px;
 }
 
 .form__bl_button {

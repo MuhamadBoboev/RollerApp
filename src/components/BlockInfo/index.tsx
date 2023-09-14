@@ -5,6 +5,9 @@ import { IBlockInfo } from '../../models/IBlockInfo'
 import { Subtitle } from '../ui/Subtitle'
 import { TitleSection } from '../ui/TitleSection'
 import { motion } from 'framer-motion'
+import Wrapper from '../Wrapper'
+import Container from '../Container'
+import { BigTitleSection } from '../ui/BigTitleSection'
 
 interface Props {
 	props: IBlockInfo
@@ -28,8 +31,9 @@ const BlockInfo = ({ props, variant }: Props) => {
 		})
 	}
 	return (
-		<section className={st.block_info} >
-			<div className={'_container ' + st.container}>
+		<div className={st.block_info} >
+			<Container className={'_container ' + st.container}>
+				<BigTitleSection>{props.subtitle}</BigTitleSection>
 				<div className={clsx(
 					st.block_info__wrapper,
 					st[`variant_${variant}`])}>
@@ -43,7 +47,7 @@ const BlockInfo = ({ props, variant }: Props) => {
 								<div className={clsx(
 									props.subtitle ? '' : st[`display_none`]
 								)}>
-									<Subtitle children={props.subtitle} />
+									{/* <Subtitle children={props.subtitle} /> */}
 								</div>
 								<TitleSection children={props.title} titleRed={props.titleRed} />
 							</div>
@@ -68,8 +72,8 @@ const BlockInfo = ({ props, variant }: Props) => {
 						</div>
 					</motion.div>
 				</div>
-			</div>
-		</section>
+			</Container>
+		</div>
 	)
 }
 export default BlockInfo

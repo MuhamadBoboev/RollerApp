@@ -50,16 +50,16 @@ const Form = () => {
 						<li className={st.form__item} >
 							<input {...register('tell')} className={'text ' + st.form__input} placeholder='Телефон*' />
 						</li>
-						<li className={st.form__item} >
+						{/* <li className={st.form__item} >
 							<input {...register('email')} className={'text ' + st.form__input} placeholder='Электронная почта*' />
-						</li>
-						<li className={st.form__item} >
+						</li> */}
+						{/* <li className={st.form__item} >
 							<select {...register("gender")} className={st.form__selected} >
 								<option className={st.form__option} value="otdel">Выберите отдел</option>
 								<option value="IT">IT</option>
 								<option value="SMM">SMM</option>
 							</select>
-						</li>
+						</li> */}
 						<li className={st.form__item} >
 							<textarea {...register('text')} className={'text ' + st.form__input} placeholder='Введите текст...' />
 						</li>

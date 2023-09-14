@@ -1,11 +1,15 @@
 @import 'src/styles/media';
+
 .container {
 	display: flex;
 	flex-direction: column;
 	grid-gap: 80px;
+
 	@include breakpoint-medium {
 		grid-gap: 40px;
 	}
 }
 
-
+.contact_us {
+	margin-bottom: 0;
+}

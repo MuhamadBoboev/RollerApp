@@ -3,25 +3,13 @@ import FormMain from "../../components/FormMain"
 import Timeline from "../../components/Timeline"
 import { IBlockInfo } from "../../models/IBlockInfo"
 import BannerCompany from "./BannerCompany"
-import QualityRoller from "./QualityRoller"
 import ReviewsSlider from "./ReviewsSlider"
-import block_info_img_1 from './block_info_1.jpg'
-// import block_info_img_asd1 from '../../../public/assets/image/company_8.webp'
-import block_info_img_2 from './block_info_2.jpg'
-import block_info_img_3 from './block_info_3.jpg'
-import { TextProps } from '../../components/ui/Text/TextProps';
 import { ITimeline } from '../../models/ITimeline';
-import fotoBanner from '/assets/image/companyBanner.jpg'
-import foto1 from '../../components/Timeline/img/briefcase_1.svg'
-import foto2 from '../../components/Timeline/img/briefcase_2.svg'
-import foto3 from '../../components/Timeline/img/briefcase_3.svg'
-import foto4 from '../../components/Timeline/img/briefcase_4.svg'
-import foto5 from '../../components/Timeline/img/briefcase_5.svg'
 import { IBanner } from "../../models/IBanner"
 import { IReviewsSlider } from "../../models/IReviewsSlider"
 
 const dateBlockInfo1: IBlockInfo = {
-	subtitle: 'О компании',
+	subtitle: 'История',
 	title: 'ИСТОРИЯ РАЗВИТИЯ КОМПАНИИ',
 	text: 'ROLLER был основан в 2006 и является первым производителем материалов из ПВХ в Таджикистане и сегодня наша компания является одним из лидеров по производству профилей для окон и дверей ПВХ, обшивочных пластик, канализационных труб, кабель-каналов в республике.За годы работы наша компания зарекомендовала себя как надёжная и опытная организация, в которой работают профессионалы своего дела. Мы выполняем как частные, так и оптовые заказы. ',
 	image: '/assets/image/company_2.webp',
@@ -77,7 +65,7 @@ const dateTimelineItems: ITimeline[] = [
 	}
 ]
 const bannerDate: IBanner = {
-	title: 'КОМПАНИЯ ROLLER',
+	title: 'КОМПАНИЯ',
 	text: 'один из национальных лидеров в области разработки и производства оконных и дверных систем из высококачественного пластика',
 	image: '/assets/image/companyBanner.webp'
 }
@@ -129,11 +117,11 @@ const AboutCompany = () => {
 				imgDisplay={true}
 				items={dateTimelineItems}
 				subtitleMain='Основные преимущества'
-				titleMain='Почему выбирают нас?'
+				titleMain='почему мы?'
 			/>
-			<BlockInfo props={dateBlockInfo2} variant='second' />
+			{/* <BlockInfo props={dateBlockInfo2} variant='second' />
 			<BlockInfo props={dateBlockInfo3} variant='first' />
-			<QualityRoller title='КАЧЕСТВО ROLLER' text='Все профили ROLLER производятся в соответствии с требованиями высшего класса качества немецкого стандарта DIN EN 12608 — класса А. Только из таких профилей можно сделать окна и двери, которые будут надёжно работать многие десятилетия, радуя Вас своим великолепным внешним видом и удобством использования. 100% качества профиля — чтобы Ваши окна дарили Вам радость.' />
+			<QualityRoller title='КАЧЕСТВО ROLLER' text='Все профили ROLLER производятся в соответствии с требованиями высшего класса качества немецкого стандарта DIN EN 12608 — класса А. Только из таких профилей можно сделать окна и двери, которые будут надёжно работать многие десятилетия, радуя Вас своим великолепным внешним видом и удобством использования. 100% качества профиля — чтобы Ваши окна дарили Вам радость.' /> */}
 			<ReviewsSlider title='Отзывы' subtitle="Вот что о нас говорят клиенты" items={dateReviewsSlider} />
 
 			<FormMain

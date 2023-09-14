@@ -6,6 +6,7 @@ import { TitleSection } from '../ui/TitleSection'
 import st from './timeline.module.scss'
 import './img/briefcase_1.svg'
 import { motion } from 'framer-motion'
+import { BigTitleSection } from '../ui/BigTitleSection'
 
 interface Props {
 	items: ITimeline[]
@@ -34,14 +35,15 @@ const Timeline = ({ items, subtitleMain, titleMain, imgDisplay = false }: Props)
 	return (<>
 		<div className={'_container ' + st.timeline} >
 			<div className={st.bl__title} >
-				<Subtitle
+				{/* <Subtitle
 					textAlign='center'
 					children={subtitleMain}
-				/>
-				<TitleSection
+				/> */}
+				{/* <TitleSection
 					textAlign='center'
 					children={titleMain}
-				/>
+				/> */}
+				<BigTitleSection>{titleMain}</BigTitleSection>
 			</div>
 			<ul className={st.items}>
 				{items.map((el, index) =>

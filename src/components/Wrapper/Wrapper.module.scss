@@ -1,0 +1,30 @@
+@import 'src/styles/media';
+
+.Wrapper {
+	margin-bottom: 150px;
+
+	@include breakpoint-small {
+		@media (max-width: 600px) {
+			margin-bottom: 40px;
+		}
+	}
+
+	@include breakpoint-medium {
+		@media (max-width: 768px) {
+			margin-bottom: 80px;
+		}
+	}
+
+	@include breakpoint-large {
+		@media (max-width: 1024px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	@include breakpoint-extra-large {
+		@media (max-width: 1440px) {
+			margin-bottom: 150px;
+		}
+	}
+
+}

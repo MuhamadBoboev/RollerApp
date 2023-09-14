@@ -4,6 +4,7 @@ import st from './contacts.module.scss'
 import { motion } from 'framer-motion'
 
 import MapMain from '../../../components/Map'
+import Container from '../../../components/Container'
 const Contacts = () => {
 	const imgVariants = {
 		hidden: {
@@ -21,7 +22,7 @@ const Contacts = () => {
 		})
 	}
 	return (<>
-		<div className={'_container ' + st.container} >
+		<Container className={st.container} >
 			<div className={st.contacts} >
 				<div className={st.contacts__bl_title}>
 					<TitleSection textAlign='center' children='Контакты' />
@@ -123,7 +124,7 @@ const Contacts = () => {
 					</div>
 				</div>
 			</div>
-		</div >
+		</Container >
 	</>)
 }
 

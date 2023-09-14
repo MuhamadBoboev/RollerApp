@@ -2,6 +2,9 @@ import st from './news.module.scss'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom';
 import NewsItem from './NewsItem';
+import Wrapper from '../../../components/Wrapper';
+import Container from '../../../components/Container';
+import { BigTitleSection } from '../../../components/ui/BigTitleSection';
 
 interface NewsInterface {
 	img: string;
@@ -70,34 +73,33 @@ const News = () => {
 			}
 		})
 	}
-	return (<section className={'padding_top_150 ' + st.news} >
-		<div className={'_container ' + st.container} >
-			<div className={st.news__header}>
-				<h2 className={'text_h2 ' + st.news_header_title} >
-					Последние новости
-				</h2>
-				<div className={st.news__bl_header_link} >
-					<Link to='/news' className={st.news__header_link} >Все новости
-					</Link>
+	return (
+		<Wrapper className={st.news} >
+			<Container className={st.container} >
+				<div className={st.news__header}>
+					<BigTitleSection>новости</BigTitleSection>
+					<div className={st.news__bl_header_link} >
+						<Link to='/news' className={st.news__header_link} >Все новости
+						</Link>
+					</div>
 				</div>
-			</div>
-			<ul className={st.news__items}>
-				{newsDate.map((el, index) =>
-					<motion.li
-						initial="hidden"
-						whileInView="animate"
-						custom={index}
-						viewport={{
-							once: true
-						}}
-						variants={imgVariants}
-					>
-						<NewsItem newsItem={el} />
-					</motion.li>
-				)}
-			</ul>
-		</div>
-	</section>)
+				<ul className={st.news__items}>
+					{newsDate.map((el, index) =>
+						<motion.li
+							initial="hidden"
+							whileInView="animate"
+							custom={index}
+							viewport={{
+								once: true
+							}}
+							variants={imgVariants}
+						>
+							<NewsItem newsItem={el} />
+						</motion.li>
+					)}
+				</ul>
+			</Container>
+		</Wrapper>)
 }
 
 export default News

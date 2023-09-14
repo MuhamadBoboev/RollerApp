@@ -12,7 +12,7 @@
 	@include grid(1fr 1fr 1fr, 1fr);
 	padding: 0px 10px;
 	background-color: #F2F3F4;
-	border-radius: 20px;
+	// border-radius: 20px;
 
 	li:not(:last-child) {
 		position: relative;

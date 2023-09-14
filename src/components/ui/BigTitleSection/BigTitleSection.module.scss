@@ -1,0 +1,23 @@
+@import "src/styles/colors";
+@import "src/styles/mixins";
+@import "src/styles/media";
+
+.Text {
+	@include fontRoboto600Semi-Bold(100px, 120%);
+	color: transparent;
+	-webkit-text-stroke: 2px $colorRed;
+	width: 100%;
+	text-transform: uppercase;
+
+	@include breakpoint-medium {
+		font-size: 45px;
+	}
+
+	@include breakpoint-small {
+		font-size: 30px;
+	}
+}
+
+// .display {
+// 	display: none;
+// }

@@ -22,9 +22,10 @@
 .info__wrapper {
 	display: flex;
 	justify-content: space-between;
-	border-radius: 20px;
+	// border-radius: 20px;
 	grid-gap: 100px;
 	padding: 48px;
+	width: 100%;
 	background-color: $colorBlockLightGrey;
 	// display: grid;
 	// grid-template-columns: 1.5fr 2fr;
@@ -84,7 +85,7 @@
 		width: max-content;
 		height: 100%;
 		object-fit: contain;
-		border-radius: 20px;
+		// border-radius: 20px;
 	}
 }
 

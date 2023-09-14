@@ -29,6 +29,7 @@ const BrandItem = ({ branItem, index }: Props) => {
 			<div className={st.brand__body} >
 				<div className={st.brand__block}>
 					<img className={branItem.image ? st.brand__logo_none : st.brand__logo} src={branItem.image} alt='логотип бренда' ></img>
+					{/* <img className={branItem.image ? st.brand__logo__mobile : st.brand__logo_none} src={branItem.imageMobile ? branItem.imageMobile : branItem.image} alt='логотип бренда' width={180} height={39} ></img> */}
 					<img className={branItem.image ? st.brand__logo__mobile : st.brand__logo_none} src={branItem.imageMobile ? branItem.imageMobile : branItem.image} alt='логотип бренда' width={180} height={39} ></img>
 				</div>
 			</div>
