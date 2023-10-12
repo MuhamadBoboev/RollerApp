@@ -32,7 +32,7 @@ function App() {
 				<Route path='aboutCompany' element={<AboutCompany />} />
 				<Route path='brands' element={<BrandsPage />} />
 
-				<Route path='products' element={<Products />} />
+				{/* <Route path='products' element={<Products />} /> */}
 				<Route path='products/profile_systems_for_windows' element={<ProfileSystemsForWindows />} />
 				<Route path='products/profile_systems_for_windows/simple_window' element={<SimpleWindow />} />
 				<Route path='products/profile_systems_for_windows/window_for_nursery' element={<WindowForNursery />} />
@@ -56,9 +56,11 @@ function App() {
 				<Route path='contacts' element={<ContactsPage />} />
 
 				<Route path='photo_gallery' element={<PhotoGalleryPage />} />
-				<Route path='*' element={<div className='_container' >
+				{/* <Route path='*' element={
+				<div className='_container' >
 					Такой странички нет
-				</div>} />
+				</div>
+			} /> */}
 			</Route>
 		</Routes>
 	)
